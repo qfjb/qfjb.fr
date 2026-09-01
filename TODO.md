@@ -48,11 +48,12 @@ mais il lui faut une clé d'accès Web3Forms pour envoyer les emails.
 
 ## Cohérence visuelle — reste à faire (lot C, à la reprise du contenu)
 
-- [ ] Coupe Epsilon annoncée avec deux dates sur `evenements.tsx` : « dimanche
-      13 septembre 2026 » dans la section dédiée vs « Samedi 14 novembre » dans
-      l'agenda (`AGENDA[0]`). L'accueil dit « 13 septembre ». À trancher.
-- [ ] Le « déroulé de la soirée » (18h30→21h45) décrit une soirée alors que la
-      Coupe est un dimanche à 14h — revoir horaires ou intitulé.
+- [x] Coupe Epsilon : date unifiée sur « dimanche 13 septembre 2026 à 14h »
+      (accueil + section dédiée + agenda de `evenements.tsx`).
+- [x] Section « Le déroulé de la soirée » retirée de `evenements.tsx` (l'agenda
+      reprend le rôle de section grise, alternance conservée).
+- [x] « 2 cours gratuits » → « cours gratuits » (tous les cours sont gratuits) :
+      remplacement homogénéisé sur les 4 pages + méta + textes « deux cours ».
 - [ ] Harmoniser la taille des `<h3>` de cartes (`text-xl` vs `text-2xl` selon
       les sections) et les 3 façons de faire du texte atténué
       (`text-muted-foreground` / `opacity-80` / `text-foreground/80`).

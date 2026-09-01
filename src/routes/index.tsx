@@ -41,13 +41,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Quai Francilien des Jeunes Bridgeurs : cours tous les jeudis à 20h à Neuilly-sur-Seine, 2 cours gratuits, tournois à thème et ambiance jeune et conviviale.",
+          "Quai Francilien des Jeunes Bridgeurs : cours tous les jeudis à 20h à Neuilly-sur-Seine, cours gratuits, tournois à thème et ambiance jeune et conviviale.",
       },
       { property: "og:title", content: "QFJB — Le club de bridge des jeunes Franciliens" },
       {
         property: "og:description",
         content:
-          "Tous les jeudis à 20h, 2 cours gratuits pour découvrir le bridge. Débutants et confirmés, tous niveaux bienvenus.",
+          "Tous les jeudis à 20h, cours gratuits pour découvrir le bridge. Débutants et confirmés, tous niveaux bienvenus.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -165,7 +165,7 @@ function Index() {
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <a href="#infos" className="pop-btn bg-coral px-7 py-4 text-lg text-coral-foreground">
-                2 cours gratuits
+                Cours gratuits
                 <ArrowRight className="size-5" />
               </a>
               <a href="#club" className="pop-btn bg-background px-7 py-4 text-lg text-foreground">
@@ -239,7 +239,7 @@ function Index() {
                 {[
                   {
                     icon: GraduationCap,
-                    title: "2 cours gratuits",
+                    title: "Cours gratuits",
                     text: "Tu viens découvrir le bridge sans pression, avec des cours guidés et bien expliqués.",
                   },
                   {
@@ -485,7 +485,7 @@ function Index() {
 
           <img
             src={logoBanniere}
-            alt="Tous les jeudis, 2 cours gratuits à 20h — chaque trimestre, un tournoi à thème"
+            alt="Tous les jeudis, cours gratuits à 20h — chaque trimestre, un tournoi à thème"
             width={1799}
             height={1012}
             loading="lazy"

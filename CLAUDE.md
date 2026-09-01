@@ -8,7 +8,7 @@ L'objectif principal est de **dépoussiérer l'image du bridge**, de séduire un
 
 ## Primary Objectives
 
-1. **Recrutement d'adhérents :** Convertir les visiteurs (débutants curieux ou joueurs confirmés) grâce au levier "2 cours gratuits les jeudis à 20h".
+1. **Recrutement d'adhérents :** Convertir les visiteurs (débutants curieux ou joueurs confirmés) grâce au levier "cours gratuits les jeudis à 20h".
 2. **Sponsoring & Financement :** Rassurer et crédibiliser le club auprès des partenaires et des donateurs via une page de soutien dédiée.
 3. **Information & Vie du club :** Diffuser le calendrier des événements (Coupe Epsilon, tournois à thème), les résultats et la vie de l'association.
 
@@ -42,7 +42,7 @@ L'objectif principal est de **dépoussiérer l'image du bridge**, de séduire un
 
 - **Lieu :** 73 Avenue Charles de Gaulle, 92200 Neuilly-sur-Seine
 - **Rendez-vous :** Tous les jeudis de 20h à 23h (hors vacances scolaires)
-- **Accroche phare :** "2 cours gratuits pour découvrir le club"
+- **Accroche phare :** "cours gratuits pour découvrir le club"
 - **Contact :** qfjb@parisbridge.fr | 06 30 22 40 36
 
 ## Informations techniques utiles à garder en mémoire
@@ -61,7 +61,7 @@ L'objectif principal est de **dépoussiérer l'image du bridge**, de séduire un
   - `npm run preview` pour prévisualiser le build
   - `npm run lint` pour le contrôle ESLint
 - **Mise en page :** Les pages sont écrites en français, avec un ton direct, jeune et convivial, sans trace de jargon “austère” du bridge.
-- **Objectif UX :** Convaincre les débutants avec l'accroche “2 cours gratuits”, rassurer les confirmés et inspirer confiance aux partenaires/sponsors.
+- **Objectif UX :** Convaincre les débutants avec l'accroche “cours gratuits”, rassurer les confirmés et inspirer confiance aux partenaires/sponsors.
 - **Erreur SSR :** Le serveur est wrapped dans `src/server.ts` pour normaliser les erreurs côté SSR et afficher une page d’erreur fiable sans casser le site.
 - **Déploiement (prérendu statique) :** Le site n'a aucune donnée dynamique (pas de `loader`, pas de `createServerFn`). `vite.config.ts` active `prerender` : `npm run build` génère un HTML complet par route dans `dist/client/` (`index.html`, `equipe/index.html`, etc.). On déploie **uniquement `dist/client/`** en FTP à la racine du domaine (hébergement statique OVH, pas de Node). `dist/server/` est ignoré. Les chemins d'assets sont absolus (`/assets/...`) donc le site doit être servi depuis la racine du domaine. `public/.htaccess` gère le repli 404 (`ErrorDocument 404 /404.html`) et le cache ; `public/404.html` est une page statique autonome.
 - **Formulaire de contact :** `src/components/contact-form.tsx`, envoi via **Web3Forms** (POST `https://api.web3forms.com/submit`, pas de backend). Clé d'accès dans `VITE_WEB3FORMS_ACCESS_KEY` (`.env`, cf. `.env.example`) — clé publique par nature, inlinée dans le bundle client. Inclut honeypot `botcheck`, case de consentement RGPD, états idle/submitting/success/error. Jamais de server function TanStack (incompatible hébergement statique). Reste à faire : page politique de confidentialité liée depuis la case de consentement.

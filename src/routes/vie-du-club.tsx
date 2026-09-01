@@ -193,7 +193,7 @@ function VieDuClubPage() {
           <div>
             <h2 className="text-3xl sm:text-4xl">Envie de nous rejoindre ?</h2>
             <p className="mt-3 font-semibold opacity-90">
-              Rendez-vous jeudi à 20h : deux cours gratuits pour démarrer et découvrir le club.
+              Rendez-vous jeudi à 20h : des cours gratuits pour démarrer et découvrir le club.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">

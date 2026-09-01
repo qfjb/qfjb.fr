@@ -37,33 +37,10 @@ export const Route = createFileRoute("/evenements")({
   component: EvenementsPage,
 });
 
-const PROGRAMME = [
-  {
-    time: "18h30",
-    title: "Accueil & inscriptions",
-    text: "Café, présentation du règlement et constitution des paires.",
-  },
-  {
-    time: "19h15",
-    title: "Première séance",
-    text: "13 donnes en tournoi par paires, mouvement Mitchell.",
-  },
-  {
-    time: "21h00",
-    title: "Pause buffet",
-    text: "Un moment pour souffler, débriefer les donnes et rencontrer les autres clubs.",
-  },
-  {
-    time: "21h45",
-    title: "Seconde séance & remise des prix",
-    text: "13 dernières donnes, classement en direct puis remise de la Coupe.",
-  },
-];
-
 const AGENDA = [
   {
     icon: Trophy,
-    date: "Samedi 14 novembre",
+    date: "Dimanche 13 septembre 2026",
     title: "Coupe Epsilon",
     text: "Le grand rendez-vous annuel du club, ouvert aux jeunes de toute l'Île-de-France.",
     highlight: true,
@@ -84,7 +61,7 @@ const AGENDA = [
     icon: Users,
     date: "Tous les jeudis",
     title: "Soirée club à 20h",
-    text: "Cours par niveau puis tournoi de régularité. Deux cours gratuits pour découvrir.",
+    text: "Cours par niveau puis tournoi de régularité. Des cours gratuits pour découvrir.",
   },
 ];
 
@@ -168,25 +145,11 @@ function EvenementsPage() {
         </div>
       </section>
 
-      {/* Programme */}
-      <section className="border-y-4 border-ink bg-muted px-4 py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="text-4xl text-electric sm:text-5xl">Le déroulé de la soirée</h2>
-          <div className="mt-3 h-1.5 w-24 bg-coral" />
-          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {PROGRAMME.map((p) => (
-              <article key={p.time} className="pop-card p-6">
-                <p className="font-display text-3xl text-coral">{p.time}</p>
-                <h3 className="mt-2 text-xl text-electric">{p.title}</h3>
-                <p className="mt-2 text-sm font-semibold opacity-80">{p.text}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Agenda */}
-      <section id="agenda" className="scroll-mt-24 px-4 py-16 sm:py-20">
+      <section
+        id="agenda"
+        className="scroll-mt-24 border-y-4 border-ink bg-muted px-4 py-16 sm:py-20"
+      >
         <div className="mx-auto max-w-6xl">
           <h2 className="text-4xl text-electric sm:text-5xl">Le calendrier du club</h2>
           <div className="mt-3 h-1.5 w-24 bg-coral" />

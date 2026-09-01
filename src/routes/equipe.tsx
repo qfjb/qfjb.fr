@@ -84,7 +84,7 @@ const PROFS: Person[] = [
     name: "Margaux",
     role: "Cours débutants",
     tag: "La prof cool",
-    bio: "Deux cours gratuits pour comprendre le jeu sans jargon : on distribue, on joue, on explique en route.",
+    bio: "Des cours gratuits pour comprendre le jeu sans jargon : on distribue, on joue, on explique en route.",
   },
   {
     name: "Louis",
@@ -176,7 +176,7 @@ function EquipePage() {
             <p className="mt-4 font-semibold leading-relaxed opacity-85">
               Chaque membre du bureau est bénévole : entre deux donnes, on gère les inscriptions, on
               réserve la salle de Neuilly-sur-Seine, on prépare les tournois à thème et on accueille
-              les débutants avec deux cours offerts.
+              les débutants avec des cours offerts.
             </p>
           </div>
         </div>
