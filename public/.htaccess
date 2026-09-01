@@ -1,0 +1,31 @@
+# QFJB — hébergement statique (Apache / OVH)
+# Le site est entièrement prérendu : chaque route a son propre index.html.
+# Ce fichier ne gère que le repli 404 et le cache des assets versionnés.
+
+ErrorDocument 404 /404.html
+
+# En-têtes de sécurité de base
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Permissions-Policy "geolocation=(), camera=(), microphone=()"
+</IfModule>
+
+# Assets au nom hashé (immuables) : cache long
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css|woff2?|jpg|jpeg|png|gif|webp|avif|svg)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  # Les pages HTML doivent toujours être revalidées
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain
+  AddOutputFilterByType DEFLATE application/javascript application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>

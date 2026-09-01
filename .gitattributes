@@ -1,0 +1,15 @@
+# Normalise les fins de ligne : LF dans le dépôt, quel que soit l'OS.
+# Évite le bruit CRLF (core.autocrlf) et les erreurs prettier/eslint sous Windows.
+* text=auto eol=lf
+
+# Fichiers binaires : jamais de conversion
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.avif binary
+*.ico binary
+*.pdf binary
+*.woff binary
+*.woff2 binary
