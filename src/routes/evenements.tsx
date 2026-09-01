@@ -130,9 +130,9 @@ function EvenementsPage() {
             <span className="pop-badge bg-coral text-coral-foreground">
               <Trophy className="size-3.5" /> Événement phare
             </span>
-            <h2 className="mt-4 text-4xl text-electric sm:text-5xl">La Coupe Epsilon</h2>
+            <h2 className="mt-5 text-4xl text-electric sm:text-5xl">La Coupe Epsilon</h2>
             <div className="mt-3 h-1.5 w-24 bg-coral" />
-            <p className="mt-6 font-semibold leading-relaxed opacity-85">
+            <p className="mt-4 font-semibold leading-relaxed opacity-85">
               Le QFJB organise avec le Comité de Paris la Coupe Epsilon. Venez nombreux le dimanche
               13 septembre 2026 à 14h participer à un tournoi convivial dont le principe est de
               mélanger les générations : un joueur de moins de 31 ans joue avec un joueur de plus de
@@ -143,7 +143,7 @@ function EvenementsPage() {
               besoin. L’ambiance est conviviale, le niveau est varié et les rencontres sont souvent
               les plus belles parties de la journée.
             </p>
-            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            <div className="mt-10 grid gap-4 sm:grid-cols-3">
               {[
                 { icon: CalendarDays, k: "13 septembre", v: "Dimanche" },
                 { icon: Clock, k: "14h", v: "Début" },
@@ -169,7 +169,7 @@ function EvenementsPage() {
       </section>
 
       {/* Programme */}
-      <section className="border-y-4 border-ink bg-card px-4 py-16 sm:py-20">
+      <section className="border-y-4 border-ink bg-muted px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-4xl text-electric sm:text-5xl">Le déroulé de la soirée</h2>
           <div className="mt-3 h-1.5 w-24 bg-coral" />
@@ -210,7 +210,7 @@ function EvenementsPage() {
         </div>
       </section>
 
-      <section className="border-t-4 border-ink bg-electric px-4 py-16 text-background">
+      <section className="border-t-4 border-ink bg-electric px-4 py-16 text-background sm:py-20">
         <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-2">
           <img
             src={gallery2}

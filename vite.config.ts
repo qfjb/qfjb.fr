@@ -16,6 +16,11 @@ export default defineConfig({
         crawlLinks: true,
         failOnError: true,
       },
+      pages: [
+        // Le CTA "Venir un jeudi" du header pointe vers "/#infos" : c'est la
+        // page "/", on l'exclut du prérendu et du sitemap.
+        { path: "/#infos", prerender: { enabled: false }, sitemap: { exclude: true } },
+      ],
       sitemap: {
         enabled: true,
         host: "https://qfjb.fr",

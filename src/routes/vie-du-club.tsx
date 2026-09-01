@@ -99,7 +99,7 @@ function VieDuClubPage() {
       </section>
 
       {/* Chiffres */}
-      <section className="border-b-4 border-ink bg-ink py-14 text-background">
+      <section className="border-b-4 border-ink bg-ink py-16 text-background sm:py-20">
         <div className="mx-auto grid max-w-6xl grid-cols-2 gap-4 px-4 sm:grid-cols-4">
           {[
             { k: "80+", v: "membres actifs" },
@@ -188,7 +188,7 @@ function VieDuClubPage() {
         </div>
       </section>
 
-      <section className="border-t-4 border-ink bg-electric px-4 py-16 text-background">
+      <section className="border-t-4 border-ink bg-electric px-4 py-16 text-background sm:py-20">
         <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
           <div>
             <h2 className="text-3xl sm:text-4xl">Envie de nous rejoindre ?</h2>

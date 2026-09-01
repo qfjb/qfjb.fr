@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Mail, Spade, Heart, Diamond, Club, GraduationCap, Users } from "lucide-react";
 
-import { PageHeader } from "@/components/page-chrome";
+import { PageHeader, PageFooter } from "@/components/page-chrome";
 import photoGroupe from "@/assets/bridge-table2.jpg";
 
 export const Route = createFileRoute("/equipe")({
@@ -168,7 +168,7 @@ function EquipePage() {
           <div>
             <h2 className="text-4xl text-electric sm:text-5xl">Notre histoire</h2>
             <div className="mt-3 h-1.5 w-24 bg-coral" />
-            <p className="mt-6 font-semibold leading-relaxed opacity-85">
+            <p className="mt-4 font-semibold leading-relaxed opacity-85">
               Né de l'envie de quelques étudiants de continuer à jouer après leurs premiers tournois
               universitaires, le club réunit aujourd'hui plus de 80 membres actifs, avec une moyenne
               d'âge de 29 ans et 45 % de joueuses.
@@ -184,7 +184,7 @@ function EquipePage() {
 
       <section
         id="bureau"
-        className="scroll-mt-24 border-y-4 border-ink bg-card px-4 py-16 sm:py-20"
+        className="scroll-mt-24 border-y-4 border-ink bg-muted px-4 py-16 sm:py-20"
       >
         <div className="mx-auto max-w-6xl">
           <h2 className="text-4xl text-electric sm:text-5xl">Le bureau</h2>
@@ -216,7 +216,7 @@ function EquipePage() {
         </div>
       </section>
 
-      <section className="border-t-4 border-ink bg-electric px-4 py-16 text-background">
+      <section className="border-t-4 border-ink bg-electric px-4 py-16 text-background sm:py-20">
         <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
           <div>
             <h2 className="text-3xl sm:text-4xl">Envie de rejoindre l'équipe ?</h2>
@@ -234,11 +234,7 @@ function EquipePage() {
         </div>
       </section>
 
-      <footer className="border-t-4 border-ink bg-card px-4 py-10">
-        <div className="mx-auto max-w-6xl text-sm font-bold uppercase opacity-70">
-          © {new Date().getFullYear()} Quai Francilien des Jeunes Bridgeurs
-        </div>
-      </footer>
+      <PageFooter />
     </div>
   );
 }

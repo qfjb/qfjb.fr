@@ -82,7 +82,8 @@
   --electric-foreground: oklch(0.99 0 0);
   --coral: oklch(0.56 0.23 27);
   --coral-foreground: oklch(0.99 0 0);
-  --lemon: oklch(0.93 0.02 264);
+  /* Accent chaud pour les éléments "mis en avant" (carte agenda phare, badges). */
+  --lemon: oklch(0.9 0.13 95);
   --mint: oklch(0.88 0.05 250);
   --background: oklch(0.97 0.006 264);
   --foreground: oklch(0.28 0.09 264);
@@ -219,4 +220,3 @@
   text-transform: uppercase;
   box-shadow: var(--shadow-pop-sm);
 }
-

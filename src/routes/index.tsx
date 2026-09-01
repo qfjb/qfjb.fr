@@ -150,7 +150,7 @@ function Index() {
       </header>
 
       {/* Hero */}
-      <section id="top" className="border-b-4 border-ink bg-electric">
+      <section id="top" className="scroll-mt-24 border-b-4 border-ink bg-electric">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 lg:grid-cols-2 sm:py-20">
           <div className="text-background">
             <span className="pop-badge bg-coral text-coral-foreground">
@@ -159,7 +159,6 @@ function Index() {
             <h1 className="mt-6 text-5xl leading-[0.95] text-background sm:text-6xl lg:text-7xl">
               Quai Francilien des Jeunes Bridgeurs
             </h1>
-            <div className="mt-5 h-1.5 w-28 bg-coral" />
             <p className="mt-6 max-w-xl text-lg font-semibold opacity-90">
               Un club convivial dédié aux jeunes joueurs de bridge d'Île-de-France. Découvrir,
               progresser et jouer dans une ambiance chaleureuse — et sans pression.
@@ -192,10 +191,10 @@ function Index() {
       </section>
 
       {/* Le club en 3 points */}
-      <section id="club" className="border-b-4 border-ink py-16 sm:py-24">
+      <section id="club" className="scroll-mt-24 border-b-4 border-ink py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4">
           <SectionTitle>Le club, c'est avant tout ...</SectionTitle>
-          <p className="mt-6 max-w-3xl text-lg font-semibold text-muted-foreground">
+          <p className="mt-4 max-w-3xl text-lg font-semibold text-muted-foreground">
             Un club de bridge jeune, dynamique et bienveillant, pensé pour accueillir les débutants
             comme les joueurs confirmés dans une ambiance conviviale.
           </p>
@@ -231,12 +230,12 @@ function Index() {
       </section>
 
       {/* Ce qui se passe les jeudis */}
-      <section className="border-b-4 border-ink bg-muted py-16 sm:py-24">
+      <section className="border-b-4 border-ink bg-muted py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4">
           <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
               <SectionTitle>Ce qui se passe les jeudis</SectionTitle>
-              <div className="mt-8 space-y-5">
+              <div className="mt-10 space-y-5">
                 {[
                   {
                     icon: GraduationCap,
@@ -302,7 +301,7 @@ function Index() {
       </section>
 
       {/* Événement phare */}
-      <section className="border-b-4 border-ink py-16 sm:py-24">
+      <section className="border-b-4 border-ink py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4">
           <div className="grid gap-8 lg:grid-cols-[auto_minmax(0,1fr)] lg:items-center lg:justify-center">
             <div className="flex justify-center lg:justify-start">
@@ -320,12 +319,12 @@ function Index() {
               </span>
               <h2 className="mt-5 text-4xl text-electric sm:text-5xl">La Coupe Epsilon</h2>
               <div className="mt-3 h-1.5 w-24 bg-coral" />
-              <p className="mt-6 text-lg font-semibold text-muted-foreground">
+              <p className="mt-4 text-lg font-semibold text-muted-foreground">
                 Le QFJB organise avec le Comité de Paris la Coupe Epsilon ! Venez nombreux le
                 dimanche 13 septembre 2026 à 14h pour un tournoi convivial où les générations sont
                 mélangées : un joueur de moins de 31 ans joue avec un joueur de plus de 31 ans.
               </p>
-              <div className="mt-6 grid gap-3 sm:grid-cols-3">
+              <div className="mt-10 grid gap-3 sm:grid-cols-3">
                 {[
                   { icon: CalendarDays, value: "13 septembre" },
                   { icon: Clock, value: "14h" },
@@ -349,7 +348,7 @@ function Index() {
       </section>
 
       {/* Vie du club / résultats */}
-      <section className="border-b-4 border-ink bg-ink py-16 text-background sm:py-24">
+      <section className="border-b-4 border-ink bg-ink py-16 text-background sm:py-20">
         <div className="mx-auto max-w-6xl px-4">
           <SectionTitle light>La vie du club</SectionTitle>
           <div className="mt-10 grid gap-6 md:grid-cols-4">
@@ -377,7 +376,7 @@ function Index() {
       </section>
 
       {/* Témoignages */}
-      <section className="border-b-4 border-ink py-16 sm:py-24">
+      <section className="border-b-4 border-ink bg-muted py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4">
           <SectionTitle>Ils sont passés par là</SectionTitle>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
@@ -409,7 +408,7 @@ function Index() {
       </section>
 
       {/* Ambiance galerie */}
-      <section className="border-b-4 border-ink py-16 sm:py-24">
+      <section className="border-b-4 border-ink py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4">
           <SectionTitle>L'ambiance du club</SectionTitle>
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
@@ -450,7 +449,7 @@ function Index() {
       </section>
 
       {/* Infos pratiques */}
-      <section id="infos" className="border-b-4 border-ink bg-muted py-16 sm:py-24">
+      <section id="infos" className="scroll-mt-24 border-b-4 border-ink bg-muted py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4">
           <SectionTitle>Infos pratiques</SectionTitle>
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
@@ -496,12 +495,12 @@ function Index() {
       </section>
 
       {/* Footer / contact */}
-      <footer id="contact" className="bg-ink py-16 text-background sm:py-24">
+      <footer id="contact" className="bg-ink py-16 text-background sm:py-20">
         <div className="mx-auto grid max-w-6xl gap-10 px-4 lg:grid-cols-2">
           <div>
             <h2 className="text-4xl text-background sm:text-5xl">Rejoignez-nous !</h2>
             <div className="mt-3 h-1.5 w-24 bg-coral" />
-            <p className="mt-5 max-w-md font-semibold opacity-85">
+            <p className="mt-4 max-w-md font-semibold opacity-85">
               Venez essayer gratuitement, un jeudi soir à 20h. Une question ? Écrivez-nous, on
               répond vite.
             </p>

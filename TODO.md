@@ -46,9 +46,25 @@ mais il lui faut une clé d'accès Web3Forms pour envoyer les emails.
 - [ ] Optimiser le poids des images : `logo-banniere.jpg` fait 619 Ko, plusieurs
       photos > 200 Ko. Convertir en WebP + ajouter `srcset` pour le responsive.
 
+## Cohérence visuelle — reste à faire (lot C, à la reprise du contenu)
+
+- [ ] Coupe Epsilon annoncée avec deux dates sur `evenements.tsx` : « dimanche
+      13 septembre 2026 » dans la section dédiée vs « Samedi 14 novembre » dans
+      l'agenda (`AGENDA[0]`). L'accueil dit « 13 septembre ». À trancher.
+- [ ] Le « déroulé de la soirée » (18h30→21h45) décrit une soirée alors que la
+      Coupe est un dimanche à 14h — revoir horaires ou intitulé.
+- [ ] Harmoniser la taille des `<h3>` de cartes (`text-xl` vs `text-2xl` selon
+      les sections) et les 3 façons de faire du texte atténué
+      (`text-muted-foreground` / `opacity-80` / `text-foreground/80`).
+- [ ] Titres forcés en capitales via CSS : surveiller la lisibilité des titres
+      longs sur les nouveaux contenus.
+
 ## Ménage (optionnel)
 
+- [x] `equipe.tsx` : footer inline dégradé remplacé par `<PageFooter />`.
+- [x] `src/assets/groupe_bordeaux.jpeg` supprimé (inutilisé).
 - [ ] `@tanstack/react-query` est branché (`QueryClientProvider`) mais inutilisé.
       Le garder si on prévoit des données dynamiques, sinon le retirer.
 - [ ] `src/components/ui/` contient beaucoup de composants shadcn non utilisés
       (sidebar, carousel, chart, form…). Élaguer ce qui ne sert pas.
+- [ ] `--mint` dans `styles.css` : défini et mappé mais utilisé nulle part.
