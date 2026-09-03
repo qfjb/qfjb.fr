@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Trophy, Quote, Users } from "lucide-react";
+import { ArrowRight, Trophy, Quote, Users, Globe } from "lucide-react";
 
 import { PageHeader, PageFooter } from "@/components/page-chrome";
 import championsFrance2025 from "@/assets/open4performance2025.jpg";
@@ -62,6 +62,52 @@ const PALMARES = [
   },
 ];
 
+const SELECTIONS = [
+  { name: "Julien Bernard", team: "Équipe de France Open" },
+  { name: "Margaux Kurek-Beaulieu", team: "Équipe de France Dames" },
+];
+
+const EQUIPES_JEUNES = [
+  {
+    event: "Championnats d'Europe 2026",
+    lines: [
+      {
+        team: "France U31",
+        names: "Romaric Guth, Nao Tabata",
+        medal: "Champions d'Europe",
+      },
+      { team: "France U26", names: "Margaux Kurek-Beaulieu" },
+      { team: "France U21", names: "Costa Benguigui" },
+      { team: "France Girls", names: "Zoey Mauberquez, Wilhelmine Schlumberger" },
+    ],
+  },
+  {
+    event: "Championnats du monde 2025",
+    lines: [
+      { team: "France U31", names: "Pierre Bedouet", medal: "Médaille de bronze" },
+      {
+        team: "France U26",
+        names: "Margaux Kurek-Beaulieu, Romaric Guth, Nao Tabata",
+      },
+      { team: "France U21", names: "Costa Benguigui" },
+      { team: "France Girls", names: "Zoey Mauberquez, Wilhelmine Schlumberger" },
+    ],
+  },
+  {
+    event: "Championnats d'Europe 2024",
+    lines: [
+      {
+        team: "France Girls",
+        names: "Margaux Kurek-Beaulieu, Constance Belloy, Zoey Mauberquez, Wilhelmine Schlumberger",
+        medal: "Championnes d'Europe",
+      },
+      { team: "France U31", names: "Raphael Basler, Louis Bonin, Pierre Bedouet" },
+      { team: "France U26", names: "Romaric Guth, Nao Tabata" },
+      { team: "France U21", names: "Costa Benguigui" },
+    ],
+  },
+];
+
 const TEMOIGNAGES = [
   {
     quote: "J'ai rencontré mon chéri à la soirée de Noël du QFJB !",
@@ -93,8 +139,8 @@ function VieDuClubPage() {
             Les résultats et la vie de nos membres
           </h1>
           <p className="mt-6 max-w-2xl text-lg font-semibold opacity-90">
-            Chaque saison, nos joueurs défendent les couleurs du QFJB en compétition fédérale — et
-            se retrouvent tous les jeudis pour vivre le club dans une ambiance jeune et conviviale.
+            Chaque saison, nos joueurs défendent les couleurs du QFJB en compétition fédérale et se
+            retrouvent tous les jeudis pour progresser ensemble.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href="#palmares" className="pop-btn bg-card px-6 py-3 text-foreground">
@@ -163,8 +209,55 @@ function VieDuClubPage() {
         </div>
       </section>
 
-      {/* Témoignages */}
+      {/* En équipe de France */}
       <section className="border-y-4 border-ink bg-muted px-4 py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="text-4xl text-electric sm:text-5xl">En équipe de France</h2>
+          <div className="mt-3 h-1.5 w-24 bg-coral" />
+          <p className="mt-4 max-w-2xl font-semibold opacity-80">
+            Plusieurs membres du club et professeurs, actuels et passés, portent le maillot bleu, en
+            adultes comme dans les sélections jeunes.
+          </p>
+
+          <div className="mt-10 flex flex-wrap gap-4">
+            {SELECTIONS.map((s) => (
+              <div key={s.name} className="pop-card flex items-center gap-3 p-4">
+                <Globe className="size-6 shrink-0 text-coral" />
+                <div>
+                  <p className="font-bold text-electric">{s.name}</p>
+                  <p className="text-xs font-extrabold uppercase tracking-widest text-muted-foreground">
+                    {s.team}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {EQUIPES_JEUNES.map((ev) => (
+              <article key={ev.event} className="pop-card p-6">
+                <h3 className="text-lg text-electric">{ev.event}</h3>
+                <ul className="mt-4 space-y-4">
+                  {ev.lines.map((l) => (
+                    <li key={l.team + l.names}>
+                      <p className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-sm font-bold text-electric">
+                        {l.team}
+                        {l.medal && (
+                          <span className="pop-badge bg-lemon text-[0.6rem]">{l.medal}</span>
+                        )}
+                      </p>
+                      <p className="mt-1 text-sm font-semibold opacity-80">{l.names}</p>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Témoignages */}
+      <section className="px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-4xl text-electric sm:text-5xl">Témoignages</h2>
           <div className="mt-3 h-1.5 w-24 bg-coral" />
@@ -181,7 +274,7 @@ function VieDuClubPage() {
       </section>
 
       {/* Galerie */}
-      <section className="px-4 py-16 sm:py-20">
+      <section className="border-y-4 border-ink bg-muted px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-4xl text-electric sm:text-5xl">L'ambiance du club</h2>
           <div className="mt-3 h-1.5 w-24 bg-coral" />
