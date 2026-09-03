@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Menu, X } from "lucide-react";
 
-import logoAsset from "@/assets/logo.png";
+import logo from "@/assets/logo.png";
 
 const NAV = [
   { label: "Accueil", to: "/" },
@@ -19,7 +19,7 @@ export function PageHeader() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
         <Link to="/" className="flex items-center gap-3">
           <img
-            src={logoAsset}
+            src={logo}
             alt="Logo QFJB"
             width={44}
             height={44}

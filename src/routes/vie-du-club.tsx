@@ -1,11 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Trophy, Medal, Star, Quote, Users } from "lucide-react";
+import { ArrowRight, Trophy, Quote, Users } from "lucide-react";
 
 import { PageHeader, PageFooter } from "@/components/page-chrome";
-import photoGroupe from "@/assets/bridge-table2.jpg";
-import gallery1 from "@/assets/bridge-table.jpg";
-import gallery3 from "@/assets/debrief_bordeaux.jpg";
-import gallery4 from "@/assets/girl-power.jpg";
+import championsFrance2025 from "@/assets/open4performance2025.jpg";
+import groupeMembres from "@/assets/club-group.jpg";
+import tableJeu from "@/assets/bridge-table.jpg";
+import debriefBordeaux from "@/assets/debrief_bordeaux.jpg";
+import joueuses from "@/assets/girl-power.jpg";
 
 export const Route = createFileRoute("/vie-du-club")({
   head: () => ({
@@ -30,46 +31,51 @@ export const Route = createFileRoute("/vie-du-club")({
 
 const PALMARES = [
   {
-    year: "2026",
-    items: [
-      { icon: Trophy, tag: "Équipe", text: "Interclubs jeunes Île-de-France — 1re place" },
-      { icon: Medal, tag: "Paire", text: "Festival de Deauville — 3e en Open par paires" },
-    ],
-  },
-  {
     year: "2025",
     items: [
-      { icon: Star, tag: "Joueur", text: "Sélection en équipe de France Espoirs" },
-      { icon: Trophy, tag: "Équipe", text: "Coupe de France par équipes — Finaliste" },
+      {
+        icon: Trophy,
+        tag: "Open Par 4 Performance",
+        text: "Champions de France : Pierre Tissot, Pierre Ollivier, Alexandre Leroy, Baptiste Moulin, Adrien de la Vaissière, Philippe Meneret",
+      },
     ],
   },
   {
-    year: "2024",
+    year: "2023",
     items: [
-      { icon: Medal, tag: "Paire", text: "Championnat de ligue par paires — 2e place" },
-      { icon: Trophy, tag: "Club", text: "Montée en Division 3 par équipes" },
+      {
+        icon: Trophy,
+        tag: "Mixte Par 4 Honneur",
+        text: "Champions de France : Marie Cambonie, Lucie Barratault, Abel Thomas, Arnaud Neulat, Jean Bernard Eytard",
+      },
+    ],
+  },
+  {
+    year: "2022",
+    items: [
+      {
+        icon: Trophy,
+        tag: "Open Par 2 Promotion",
+        text: "Champions de France : Hector Brunel, Arnaud Neulat",
+      },
     ],
   },
 ];
 
 const TEMOIGNAGES = [
   {
-    quote:
-      "Je n'avais jamais touché une carte de bridge. En quelques jeudis, je jouais mes premières donnes sans stress.",
-    name: "Camille",
-    since: "membre depuis 2023",
+    quote: "J'ai rencontré mon chéri à la soirée de Noël du QFJB !",
+    name: "Lucie Barratault",
   },
   {
     quote:
-      "On vient pour le bridge, on reste pour les gens. L'ambiance est jeune, détendue et vraiment accueillante.",
-    name: "Thomas",
-    since: "membre depuis 2021",
+      "J'ai très vite été séduit par l'ambiance du club et la possibilité de profiter de cours gratuitement. Grâce au QFJB je me suis constitué un nouveau cercle d'amis avec qui je prends plaisir à jouer en compétition.",
+    name: "Pierre Ollivier",
   },
   {
     quote:
-      "Le tournoi à thème du trimestre reste mon meilleur souvenir : du niveau, des fous rires et une vraie émulation.",
-    name: "Léa",
-    since: "membre depuis 2022",
+      "D'excellents profs, des fous rires, des pizzas gratuites et des soirées qui se terminent au bar à pas d'heure… Facile dans le top 3 des moments de ma semaine !",
+    name: "Chloé Sack",
   },
 ];
 
@@ -102,10 +108,10 @@ function VieDuClubPage() {
       <section className="border-b-4 border-ink bg-ink py-16 text-background sm:py-20">
         <div className="mx-auto grid max-w-6xl grid-cols-2 gap-4 px-4 sm:grid-cols-4">
           {[
-            { k: "80+", v: "membres actifs" },
-            { k: "12", v: "compétitions par an" },
-            { k: "6", v: "podiums en 2026" },
-            { k: "45 %", v: "de femmes" },
+            { k: "50", v: "membres actifs" },
+            { k: "5", v: "ans d'existence" },
+            { k: "26 %", v: "de femmes" },
+            { k: "29", v: "ans de moyenne d'âge" },
           ].map((s) => (
             <div key={s.v} className="pop-card bg-card p-5 text-foreground">
               <p className="font-accent text-4xl text-coral">{s.k}</p>
@@ -121,27 +127,38 @@ function VieDuClubPage() {
           <h2 className="text-4xl text-electric sm:text-5xl">Nos réussites</h2>
           <div className="mt-3 h-1.5 w-24 bg-coral" />
           <p className="mt-4 max-w-2xl font-semibold opacity-80">
-            Saison après saison, les paires et les équipes du club se distinguent en compétition.
+            Plusieurs de nos membres sont Champions de France — la preuve qu'on peut débuter au club
+            et viser haut.
           </p>
-          <div className="mt-10 space-y-10">
-            {PALMARES.map((season) => (
-              <div key={season.year}>
-                <span className="pop-badge bg-lemon">Saison {season.year}</span>
-                <div className="mt-4 grid gap-4 md:grid-cols-2">
-                  {season.items.map((r) => (
-                    <div key={r.text} className="pop-card flex items-center gap-4 p-5">
-                      <r.icon className="size-7 shrink-0 text-coral" />
-                      <div>
-                        <p className="text-xs font-extrabold uppercase tracking-widest text-muted-foreground">
-                          {r.tag}
-                        </p>
-                        <p className="font-bold text-electric">{r.text}</p>
+          <div className="mt-10 grid gap-8 lg:grid-cols-2 lg:items-start">
+            <img
+              src={championsFrance2025}
+              alt="Les joueurs du QFJB champions de France 2025 en Open Par 4 Performance"
+              width={1600}
+              height={1200}
+              loading="lazy"
+              className="pop-card w-full object-cover lg:sticky lg:top-24"
+            />
+            <div className="space-y-8">
+              {PALMARES.map((season) => (
+                <div key={season.year}>
+                  <span className="pop-badge bg-lemon">Saison {season.year}</span>
+                  <div className="mt-4 space-y-4">
+                    {season.items.map((r) => (
+                      <div key={r.text} className="pop-card flex items-center gap-4 p-5">
+                        <r.icon className="size-7 shrink-0 text-coral" />
+                        <div>
+                          <p className="text-xs font-extrabold uppercase tracking-widest text-muted-foreground">
+                            {r.tag}
+                          </p>
+                          <p className="font-bold text-electric">{r.text}</p>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -157,7 +174,6 @@ function VieDuClubPage() {
                 <Quote className="size-8 text-coral" />
                 <p className="mt-4 font-semibold opacity-80">{t.quote}</p>
                 <p className="mt-5 font-accent text-lg text-electric">{t.name}</p>
-                <p className="text-sm font-bold uppercase text-muted-foreground">{t.since}</p>
               </article>
             ))}
           </div>
@@ -171,10 +187,10 @@ function VieDuClubPage() {
           <div className="mt-3 h-1.5 w-24 bg-coral" />
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { src: photoGroupe, alt: "Les membres du QFJB réunis" },
-              { src: gallery1, alt: "Partie de bridge entre membres du club" },
-              { src: gallery3, alt: "Débrief entre membres du club à Bordeaux" },
-              { src: gallery4, alt: "Cartes et jetons sur une table de bridge" },
+              { src: groupeMembres, alt: "Les membres du QFJB réunis" },
+              { src: tableJeu, alt: "Partie de bridge entre membres du club" },
+              { src: debriefBordeaux, alt: "Débrief entre membres du club à Bordeaux" },
+              { src: joueuses, alt: "Cartes et jetons sur une table de bridge" },
             ].map((g) => (
               <img
                 key={g.alt}

@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Mail, Spade, Heart, Diamond, Club, GraduationCap, Users } from "lucide-react";
 
 import { PageHeader, PageFooter } from "@/components/page-chrome";
-import photoGroupe from "@/assets/bridge-table2.jpg";
+import soireeClub from "@/assets/bridge-table2.jpg";
 
 export const Route = createFileRoute("/equipe")({
   head: () => ({
@@ -29,48 +29,18 @@ export const Route = createFileRoute("/equipe")({
 type Person = {
   name: string;
   role: string;
-  tag: string;
-  bio: string;
+  tag?: string;
+  bio?: string;
   photo?: string;
 };
 
 const BUREAU: Person[] = [
-  {
-    name: "Pierre",
-    role: "Président",
-    tag: "Le stratège",
-    bio: "Cofondateur du club, il enchaîne les tournois depuis dix ans et veille à ce que chaque jeudi reste une fête autant qu'une compétition.",
-  },
-  {
-    name: "Margaux",
-    role: "Vice-présidente",
-    tag: "L'ambianceur en chef",
-    bio: "Elle accueille les nouveaux venus, organise les tournois à thème et fait tomber en trois minutes tous les clichés sur le bridge.",
-  },
-  {
-    name: "Louis",
-    role: "Trésorier",
-    tag: "Le gardien des cartes",
-    bio: "Licences, cotisations, réservations de salle : il tient les comptes du club aussi rigoureusement qu'un plan de jeu au chelem.",
-  },
-  {
-    name: "Camille",
-    role: "Secrétaire générale",
-    tag: "La cheffe d'orchestre",
-    bio: "Convocations, calendrier, inscriptions aux compétitions : rien ne se perd, tout se planifie.",
-  },
-  {
-    name: "Antoine",
-    role: "Responsable communication",
-    tag: "La voix du club",
-    bio: "Réseaux sociaux, photos des soirées, newsletters : c'est lui qui raconte la vie du QFJB au reste de l'Île-de-France.",
-  },
-  {
-    name: "Sarah",
-    role: "Responsable événements",
-    tag: "La créatrice de soirées",
-    bio: "Coupe Epsilon, tournois à thème, afterworks : elle transforme une table de bridge en vraie soirée.",
-  },
+  { name: "Jean-Bernard", role: "Président" },
+  { name: "Constance", role: "Secrétaire générale" },
+  { name: "Pierre", role: "Trésorier" },
+  { name: "Chloé", role: "Vice-présidente" },
+  { name: "Manon", role: "Vice-présidente" },
+  { name: "Tanguy", role: "Vice-président" },
 ];
 
 const PROFS: Person[] = [
@@ -78,26 +48,27 @@ const PROFS: Person[] = [
     name: "Pierre",
     role: "Cours confirmés & compétition",
     tag: "Le stratège",
-    bio: "Enchères modernes, défense et préparation aux tournois par paires. Exigeant sur la technique, jamais sur le ton.",
+    bio: "Enchères modernes, techniques avancées de jeu de la carte. Pour les compétiteurs expérimentés.",
+  },
+  {
+    name: "Louis",
+    role: "Cours intermédiaires",
+    tag: "Le petit génie",
+    bio: "Pour ceux qui veulent passer de la théorie à la pratique : une fois les bases maitrisées on se prépare à se lancer dans les compétitions.",
   },
   {
     name: "Margaux",
     role: "Cours débutants",
     tag: "La prof cool",
-    bio: "Des cours gratuits pour comprendre le jeu sans jargon : on distribue, on joue, on explique en route.",
-  },
-  {
-    name: "Louis",
-    role: "Cours intermédiaires",
-    tag: "Le pédagogue",
-    bio: "Le passage du « je connais les règles » au « je sais construire un contrat », avec beaucoup de donnes commentées.",
+    bio: "Initiation en détente : on apprend les règles et les bases des enchères pour déjà commencer à s'amuser.",
   },
 ];
 
 const SUITS = [Spade, Heart, Diamond, Club];
 
 function PersonCard({ person, index }: { person: Person; index: number }) {
-  const Suit = SUITS[index % SUITS.length]!;
+  // Trèfle pour les vice-président·es, sinon rotation des enseignes.
+  const Suit = person.role.startsWith("Vice-président") ? Club : SUITS[index % SUITS.length]!;
   return (
     <article className="pop-card overflow-hidden">
       <div className="relative flex h-56 items-center justify-center border-b-4 border-ink bg-electric">
@@ -121,7 +92,9 @@ function PersonCard({ person, index }: { person: Person; index: number }) {
         <p className="mt-1 text-sm font-extrabold uppercase tracking-wide text-coral">
           {person.role}
         </p>
-        <p className="mt-3 text-sm font-semibold leading-relaxed opacity-80">{person.bio}</p>
+        {person.bio && (
+          <p className="mt-3 text-sm font-semibold leading-relaxed opacity-80">{person.bio}</p>
+        )}
       </div>
     </article>
   );
@@ -159,7 +132,7 @@ function EquipePage() {
       <section className="px-4 py-16 sm:py-20">
         <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2">
           <img
-            src={photoGroupe}
+            src={soireeClub}
             alt="Les membres du QFJB réunis lors d'une soirée du club"
             width={1600}
             height={1200}
@@ -169,14 +142,14 @@ function EquipePage() {
             <h2 className="text-4xl text-electric sm:text-5xl">Notre histoire</h2>
             <div className="mt-3 h-1.5 w-24 bg-coral" />
             <p className="mt-4 font-semibold leading-relaxed opacity-85">
-              Né de l'envie de quelques étudiants de continuer à jouer après leurs premiers tournois
-              universitaires, le club réunit aujourd'hui plus de 80 membres actifs, avec une moyenne
-              d'âge de 29 ans et 45 % de joueuses.
+              Le QFJB (Quai Francilien des Jeunes Bridgeurs) est un club convivial dédié aux jeunes
+              joueurs de bridge d'Île-de-France, né de l'envie de jeunes joueurs chevronnés de se
+              retrouver régulièrement et de faire découvrir ce jeu de stratégie et de partenariat,
+              dans une ambiance chaleureuse et sans pression.
             </p>
             <p className="mt-4 font-semibold leading-relaxed opacity-85">
-              Chaque membre du bureau est bénévole : entre deux donnes, on gère les inscriptions, on
-              réserve la salle de Neuilly-sur-Seine, on prépare les tournois à thème et on accueille
-              les débutants avec des cours offerts.
+              Aujourd'hui le club réunit aujourd'hui une cinquantaine de membres actifs, avec une
+              moyenne d'âge de 29 ans et 26 % de joueuses.
             </p>
           </div>
         </div>
@@ -219,10 +192,9 @@ function EquipePage() {
       <section className="border-t-4 border-ink bg-electric px-4 py-16 text-background sm:py-20">
         <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
           <div>
-            <h2 className="text-3xl sm:text-4xl">Envie de rejoindre l'équipe ?</h2>
+            <h2 className="text-3xl sm:text-4xl">Envie d'en savoir plus ?</h2>
             <p className="mt-3 font-semibold opacity-90">
-              Le bureau accueille chaque année de nouveaux bénévoles. Écrivez-nous à
-              qfjb@parisbridge.fr.
+              Pour plus de renseignements, écrivez-nous à qfjb@parisbridge.fr.
             </p>
           </div>
           <a

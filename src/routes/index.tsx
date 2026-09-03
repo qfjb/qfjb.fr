@@ -13,6 +13,8 @@ import {
   Trophy,
   GraduationCap,
   Mic,
+  Pizza,
+  Smile,
   CalendarDays,
   Clock,
   MapPin,
@@ -25,14 +27,14 @@ import {
 
 import { ContactForm } from "@/components/contact-form";
 
-import logoAsset from "@/assets/logo.png";
-import photoTable from "@/assets/club-group.jpg";
-import photoGroupe from "@/assets/bridge-table2.jpg";
-import coupeEpsilon from "@/assets/coupe-epsilon.jpeg";
-import logoBanniere from "@/assets/logo-banniere.jpg";
-import gallery1 from "@/assets/bridge-table.jpg";
-import gallery2 from "@/assets/club-group.jpg";
-import gallery3 from "@/assets/girl-power.jpg";
+import logo from "@/assets/logo.png";
+import coursJeudi from "@/assets/bridge-table3.jpg";
+import coursTable from "@/assets/bridge-table4.jpg";
+import afficheEpsilon from "@/assets/coupe-epsilon.jpeg";
+import banniere from "@/assets/logo-banniere.jpg";
+import tableJeu from "@/assets/bridge-table.jpg";
+import groupeMembres from "@/assets/club-group.jpg";
+import joueuses from "@/assets/girl-power.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -84,7 +86,7 @@ function Index() {
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <a href="#top" className="flex items-center gap-3">
             <img
-              src={logoAsset}
+              src={logo}
               alt="Logo QFJB"
               width={44}
               height={44}
@@ -181,40 +183,45 @@ function Index() {
           </div>
 
           <img
-            src={photoTable}
-            alt="Jeunes bridgeurs autour d'une table de jeu au QFJB"
+            src={groupeMembres}
+            alt="Les membres du QFJB réunis lors d'une soirée du club"
             width={1200}
-            height={1046}
+            height={1600}
             className="pop-card h-72 w-full object-cover sm:h-96"
           />
         </div>
       </section>
 
-      {/* Le club en 3 points */}
+      {/* Pourquoi nous rejoindre */}
       <section id="club" className="scroll-mt-24 border-b-4 border-ink py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4">
-          <SectionTitle>Le club, c'est avant tout ...</SectionTitle>
+          <SectionTitle>Pourquoi nous rejoindre ?</SectionTitle>
           <p className="mt-4 max-w-3xl text-lg font-semibold text-muted-foreground">
             Un club de bridge jeune, dynamique et bienveillant, pensé pour accueillir les débutants
             comme les joueurs confirmés dans une ambiance conviviale.
           </p>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
-                icon: Users,
+                icon: Smile,
                 title: "Tous niveaux",
-                text: "Tu débutes ? Tu joues déjà ? On t'accueille avec le même sourire et la même envie de jouer.",
+                text: "Tu débutes ? Tu joues déjà ? On t'accueille avec le même sourire.",
               },
               {
                 icon: Heart,
-                title: "Ambiance jeune",
+                title: "Ambiance jeune & conviviale",
                 text: "Pas de jargon austère, pas de pression : on apprend, on rigole et on progresse ensemble.",
               },
               {
-                icon: CalendarDays,
-                title: "Rendez-vous fixes",
-                text: "Chaque jeudi soir, tu peux venir jouer, rencontrer du monde et découvrir la dynamique du club.",
+                icon: Pizza,
+                title: "Pizzas gratuites",
+                text: "Un petit creux le jeudi soir ? We got you.",
+              },
+              {
+                icon: Smile,
+                title: "Aucune contrainte",
+                text: "Tu viens comme tu es, quand tu veux, le club s'adapte à ton rythme.",
               },
             ].map((c) => (
               <article key={c.title} className="pop-card p-7">
@@ -240,17 +247,17 @@ function Index() {
                   {
                     icon: GraduationCap,
                     title: "Cours gratuits",
-                    text: "Tu viens découvrir le bridge sans pression, avec des cours guidés et bien expliqués.",
+                    text: "Viens découvrir le bridge sans pression, avec des cours pour tous les niveaux.",
                   },
                   {
                     icon: Users,
                     title: "Des rencontres dès la première soirée",
-                    text: "On joue, on échange, on s'installe dans une ambiance très conviviale et ouverte.",
+                    text: "On joue, on échange, on s'installe dans une ambiance conviviale et accueillante.",
                   },
                   {
-                    icon: Trophy,
-                    title: "Un club qui monte ensemble",
-                    text: "Tournois, ambiance de groupe et progression régulière, sans se prendre au sérieux trop vite.",
+                    icon: Smile,
+                    title: "Une soirée complète",
+                    text: "Cours, repas et donnes commentées : ici on ne s'ennuie pas !",
                   },
                 ].map((item) => (
                   <div key={item.title} className="pop-card flex gap-4 p-5">
@@ -306,7 +313,7 @@ function Index() {
           <div className="grid gap-8 lg:grid-cols-[auto_minmax(0,1fr)] lg:items-center lg:justify-center">
             <div className="flex justify-center lg:justify-start">
               <img
-                src={coupeEpsilon}
+                src={afficheEpsilon}
                 alt="Affiche de la Coupe Epsilon du QFJB"
                 width={1054}
                 height={1492}
@@ -353,10 +360,10 @@ function Index() {
           <SectionTitle light>La vie du club</SectionTitle>
           <div className="mt-10 grid gap-6 md:grid-cols-4">
             {[
-              { k: "80+", v: "membres actifs" },
-              { k: "12", v: "compétitions / an" },
-              { k: "6", v: "podiums en 2026" },
-              { k: "45 %", v: "de femmes" },
+              { k: "50", v: "membres actifs" },
+              { k: "5", v: "ans d'existence" },
+              { k: "26 %", v: "de femmes" },
+              { k: "29", v: "ans de moyenne d'âge" },
             ].map((s) => (
               <div key={s.v} className="pop-card bg-card p-5 text-foreground">
                 <p className="font-accent text-4xl text-coral">{s.k}</p>
@@ -378,23 +385,22 @@ function Index() {
       {/* Témoignages */}
       <section className="border-b-4 border-ink bg-muted py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4">
-          <SectionTitle>Ils sont passés par là</SectionTitle>
+          <SectionTitle>Ce qu'en disent nos membres</SectionTitle>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {[
               {
-                quote:
-                  "Je n'avais jamais touché une carte de bridge. En quelques jeudis, je jouais mes premières donnes sans stress.",
-                name: "Camille",
+                quote: "J'ai rencontré mon chéri à la soirée de Noël du QFJB !",
+                name: "Lucie Barratault",
               },
               {
                 quote:
-                  "On vient pour le bridge, on reste pour les gens. L'ambiance est jeune, détendue et vraiment accueillante.",
-                name: "Thomas",
+                  "J'ai très vite été séduit par l'ambiance du club et la possibilité de profiter de cours gratuitement. Grâce au QFJB je me suis constitué un nouveau cercle d'amis avec qui je prends plaisir à jouer en compétition.",
+                name: "Pierre Ollivier",
               },
               {
                 quote:
-                  "Le tournoi à thème du trimestre reste mon meilleur souvenir : du niveau, des fous rires et une vraie émulation.",
-                name: "Léa",
+                  "D'excellents profs, des fous rires, des pizzas gratuites et des soirées qui se terminent au bar à pas d'heure… Facile dans le top 3 des moments de ma semaine !",
+                name: "Chloé Sack",
               },
             ].map((t) => (
               <article key={t.name} className="pop-card p-7">
@@ -413,15 +419,15 @@ function Index() {
           <SectionTitle>L'ambiance du club</SectionTitle>
           <div className="mt-10 grid gap-4 sm:grid-cols-3">
             <img
-              src={photoGroupe}
-              alt="Photo de groupe des membres du QFJB"
-              width={1200}
-              height={1000}
+              src={coursTable}
+              alt="Autour de la table pendant le cours du jeudi soir"
+              width={2048}
+              height={1536}
               loading="lazy"
               className="pop-card col-span-2 h-64 w-full object-cover sm:h-80"
             />
             <img
-              src={gallery3}
+              src={joueuses}
               alt="Joueuses du QFJB autour d'une table de bridge"
               width={1600}
               height={1200}
@@ -429,18 +435,18 @@ function Index() {
               className="pop-card h-64 w-full object-cover sm:h-80"
             />
             <img
-              src={gallery2}
-              alt="Mains tenant des cartes de bridge"
-              width={1024}
-              height={768}
+              src={coursJeudi}
+              alt="Cours de bridge du jeudi soir au QFJB"
+              width={2048}
+              height={1536}
               loading="lazy"
               className="pop-card h-64 w-full object-cover sm:h-80"
             />
             <img
-              src={gallery1}
-              alt="Jeunes joueurs riant autour d'une table de cartes"
-              width={1024}
-              height={1024}
+              src={tableJeu}
+              alt="Jeunes joueurs autour d'une table de cartes un jeudi soir"
+              width={1318}
+              height={922}
               loading="lazy"
               className="pop-card col-span-2 h-64 w-full object-cover sm:h-80"
             />
@@ -484,7 +490,7 @@ function Index() {
           </div>
 
           <img
-            src={logoBanniere}
+            src={banniere}
             alt="Tous les jeudis, cours gratuits à 20h — chaque trimestre, un tournoi à thème"
             width={1799}
             height={1012}

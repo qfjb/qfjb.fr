@@ -12,8 +12,8 @@ import {
 } from "lucide-react";
 
 import { PageHeader, PageFooter } from "@/components/page-chrome";
-import coupeEpsilon from "@/assets/coupe-epsilon.jpeg";
-import gallery2 from "@/assets/club-group.jpg";
+import afficheEpsilon from "@/assets/coupe-epsilon.jpeg";
+import soireeClub from "@/assets/bridge-table2.jpg";
 
 export const Route = createFileRoute("/evenements")({
   head: () => ({
@@ -55,7 +55,7 @@ const AGENDA = [
     icon: Mic,
     date: "Jeudi 22 janvier",
     title: "Conférence : la défense moderne",
-    text: "Un joueur de haut niveau décortique ses donnes et répond aux questions.",
+    text: "Chaque trimestre, une conférence donnée par les meilleurs joueurs français : ils décortiquent leurs donnes et répondent aux questions.",
   },
   {
     icon: Users,
@@ -97,7 +97,7 @@ function EvenementsPage() {
       <section id="epsilon" className="scroll-mt-24 px-4 py-16 sm:py-20">
         <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2">
           <img
-            src={coupeEpsilon}
+            src={afficheEpsilon}
             alt="Affiche de la Coupe Epsilon du QFJB"
             width={1054}
             height={1492}
@@ -176,10 +176,10 @@ function EvenementsPage() {
       <section className="border-t-4 border-ink bg-electric px-4 py-16 text-background sm:py-20">
         <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-2">
           <img
-            src={gallery2}
+            src={soireeClub}
             alt="Ambiance conviviale lors d'une soirée du club"
-            width={1200}
-            height={1046}
+            width={1600}
+            height={1200}
             loading="lazy"
             className="pop-card w-full object-cover"
           />
