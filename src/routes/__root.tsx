@@ -39,7 +39,7 @@ function NotFoundComponent() {
       <div className="flex flex-1 flex-col items-center justify-center gap-6 px-4 py-16">
         <SuitRow className="text-coral" />
         <div className="pop-card w-full max-w-lg p-8 text-center sm:p-10">
-          <p className="font-display text-8xl leading-none text-coral">404</p>
+          <p className="font-accent text-8xl leading-none text-coral">404</p>
           <h1 className="mt-4 text-2xl">Page introuvable</h1>
           <p className="mt-3 font-semibold text-foreground/80">
             Cette page n'existe pas ou a changé de place.
@@ -129,7 +129,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Sans+3:wght@400;600;700;800&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Space+Grotesk:wght@500;700&family=Source+Sans+3:wght@400;600;700;800&display=swap",
       },
       { rel: "icon", type: "image/png", href: "/favicon.png" },
     ],

@@ -19,7 +19,8 @@
  */
 
 @theme inline {
-  --font-display: "Playfair Display", Georgia, serif;
+  --font-display: "Montserrat", system-ui, sans-serif;
+  --font-accent: "Space Grotesk", system-ui, sans-serif;
   --font-sans: "Source Sans 3", system-ui, sans-serif;
   --color-ink: var(--ink);
   --color-electric: var(--electric);
@@ -170,8 +171,13 @@
   h2,
   h3 {
     font-family: var(--font-display);
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: -0.02em;
+    letter-spacing: 0.01em;
+  }
+
+  h1 {
+    font-weight: 800;
   }
 }
 
@@ -192,7 +198,7 @@
   box-shadow: var(--shadow-pop-sm);
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   transition:
     transform 0.12s ease,
     box-shadow 0.12s ease;

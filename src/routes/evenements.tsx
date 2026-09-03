@@ -128,7 +128,7 @@ function EvenementsPage() {
               ].map((i) => (
                 <div key={i.k} className="pop-card p-4">
                   <i.icon className="size-6 text-coral" />
-                  <p className="mt-2 font-display text-xl text-electric">{i.k}</p>
+                  <p className="mt-2 font-accent text-xl text-electric">{i.k}</p>
                   <p className="text-xs font-bold uppercase text-muted-foreground">{i.v}</p>
                 </div>
               ))}

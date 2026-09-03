@@ -109,7 +109,7 @@ function PersonCard({ person, index }: { person: Person; index: number }) {
             className="size-full object-cover"
           />
         ) : (
-          <span className="font-display text-6xl text-background">{person.name.slice(0, 1)}</span>
+          <span className="font-accent text-6xl text-background">{person.name.slice(0, 1)}</span>
         )}
         <span className="pop-badge absolute right-3 top-3 bg-card text-xs">
           <Suit className="size-3.5 text-coral" />

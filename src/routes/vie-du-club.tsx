@@ -108,7 +108,7 @@ function VieDuClubPage() {
             { k: "45 %", v: "de femmes" },
           ].map((s) => (
             <div key={s.v} className="pop-card bg-card p-5 text-foreground">
-              <p className="font-display text-4xl text-coral">{s.k}</p>
+              <p className="font-accent text-4xl text-coral">{s.k}</p>
               <p className="mt-1 text-sm font-bold uppercase text-muted-foreground">{s.v}</p>
             </div>
           ))}
@@ -156,7 +156,7 @@ function VieDuClubPage() {
               <article key={t.name} className="pop-card p-7">
                 <Quote className="size-8 text-coral" />
                 <p className="mt-4 font-semibold opacity-80">{t.quote}</p>
-                <p className="mt-5 font-display text-lg text-electric">{t.name}</p>
+                <p className="mt-5 font-accent text-lg text-electric">{t.name}</p>
                 <p className="text-sm font-bold uppercase text-muted-foreground">{t.since}</p>
               </article>
             ))}
