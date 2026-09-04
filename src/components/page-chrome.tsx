@@ -11,6 +11,17 @@ const NAV = [
   { label: "Vie du club", to: "/vie-du-club" },
 ] as const;
 
+export function SkipLink() {
+  return (
+    <a
+      href="#contenu"
+      className="sr-only rounded-md border-2 border-ink bg-coral px-4 py-2 font-extrabold uppercase text-coral-foreground focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100]"
+    >
+      Aller au contenu
+    </a>
+  );
+}
+
 export function PageHeader() {
   const [open, setOpen] = useState(false);
 

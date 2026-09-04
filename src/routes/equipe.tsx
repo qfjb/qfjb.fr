@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Mail, Spade, Heart, Diamond, Club, GraduationCap, Users } from "lucide-react";
 
-import { PageHeader, PageFooter } from "@/components/page-chrome";
+import { SkipLink, PageHeader, PageFooter } from "@/components/page-chrome";
 import soireeClub from "@/assets/bridge-table2.jpg";
 
 export const Route = createFileRoute("/equipe")({
@@ -93,7 +93,9 @@ function PersonCard({ person, index }: { person: Person; index: number }) {
           {person.role}
         </p>
         {person.bio && (
-          <p className="mt-3 text-sm font-semibold leading-relaxed opacity-80">{person.bio}</p>
+          <p className="mt-3 text-sm font-semibold leading-relaxed text-muted-foreground">
+            {person.bio}
+          </p>
         )}
       </div>
     </article>
@@ -103,108 +105,111 @@ function PersonCard({ person, index }: { person: Person; index: number }) {
 function EquipePage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SkipLink />
       <PageHeader />
 
-      <section className="border-b-4 border-ink bg-electric px-4 py-16 text-background sm:py-20">
-        <div className="mx-auto max-w-6xl">
-          <span className="pop-badge bg-coral text-coral-foreground">
-            <Users className="size-4" /> Qui sommes-nous ?
-          </span>
-          <h1 className="mt-6 max-w-3xl text-4xl leading-tight sm:text-6xl">
-            Le bureau et les profs qui font vivre le club
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg font-semibold opacity-90">
-            Le QFJB est une association portée par des bénévoles de moins de 40 ans. Une équipe qui
-            organise les jeudis soir, encadre les cours et accompagne les joueurs, du tout premier
-            atelier jusqu'aux compétitions fédérales.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#bureau" className="pop-btn bg-card px-6 py-3 text-foreground">
-              Le bureau <ArrowRight className="size-4" />
-            </a>
-            <a href="#profs" className="pop-btn bg-coral px-6 py-3 text-coral-foreground">
-              L'équipe pédagogique <GraduationCap className="size-4" />
-            </a>
+      <main id="contenu" tabIndex={-1} className="outline-none">
+        <section className="border-b-4 border-ink bg-electric px-4 py-16 text-background sm:py-20">
+          <div className="mx-auto max-w-6xl">
+            <span className="pop-badge bg-coral text-coral-foreground">
+              <Users className="size-4" /> Qui sommes-nous ?
+            </span>
+            <h1 className="mt-6 max-w-3xl text-4xl leading-tight sm:text-6xl">
+              Le bureau et les profs qui font vivre le club
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg font-semibold opacity-90">
+              Le QFJB est une association portée par des bénévoles de moins de 40 ans. Une équipe
+              qui organise les jeudis soir, encadre les cours et accompagne les joueurs, du tout
+              premier atelier jusqu'aux compétitions fédérales.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a href="#bureau" className="pop-btn bg-card px-6 py-3 text-foreground">
+                Le bureau <ArrowRight className="size-4" />
+              </a>
+              <a href="#profs" className="pop-btn bg-coral px-6 py-3 text-coral-foreground">
+                L'équipe pédagogique <GraduationCap className="size-4" />
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="px-4 py-16 sm:py-20">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2">
-          <img
-            src={soireeClub}
-            alt="Les membres du QFJB réunis lors d'une soirée du club"
-            width={1600}
-            height={1200}
-            className="pop-card w-full object-cover"
-          />
-          <div>
-            <h2 className="text-4xl text-electric sm:text-5xl">Notre histoire</h2>
+        <section className="px-4 py-16 sm:py-20">
+          <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2">
+            <img
+              src={soireeClub}
+              alt="Les membres du QFJB réunis lors d'une soirée du club"
+              width={1600}
+              height={1200}
+              className="pop-card w-full object-cover"
+            />
+            <div>
+              <h2 className="text-4xl text-electric sm:text-5xl">Notre histoire</h2>
+              <div className="mt-3 h-1.5 w-24 bg-coral" />
+              <p className="mt-4 font-semibold leading-relaxed text-muted-foreground">
+                Le QFJB (Quai Francilien des Jeunes Bridgeurs) est un club convivial dédié aux
+                jeunes joueurs de bridge d'Île-de-France, né de l'envie de jeunes joueurs chevronnés
+                de se retrouver régulièrement et de faire découvrir ce jeu de stratégie et de
+                partenariat, dans une ambiance chaleureuse et sans pression.
+              </p>
+              <p className="mt-4 font-semibold leading-relaxed text-muted-foreground">
+                Le club réunit aujourd'hui une cinquantaine de membres actifs, avec une moyenne
+                d'âge de 29 ans et 26 % de joueuses.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="bureau"
+          className="scroll-mt-24 border-y-4 border-ink bg-muted px-4 py-16 sm:py-20"
+        >
+          <div className="mx-auto max-w-6xl">
+            <h2 className="text-4xl text-electric sm:text-5xl">Le bureau</h2>
             <div className="mt-3 h-1.5 w-24 bg-coral" />
-            <p className="mt-4 font-semibold leading-relaxed opacity-85">
-              Le QFJB (Quai Francilien des Jeunes Bridgeurs) est un club convivial dédié aux jeunes
-              joueurs de bridge d'Île-de-France, né de l'envie de jeunes joueurs chevronnés de se
-              retrouver régulièrement et de faire découvrir ce jeu de stratégie et de partenariat,
-              dans une ambiance chaleureuse et sans pression.
+            <p className="mt-4 max-w-2xl font-semibold text-muted-foreground">
+              Six bénévoles élus par les membres, qui font tourner le club toute l'année.
             </p>
-            <p className="mt-4 font-semibold leading-relaxed opacity-85">
-              Aujourd'hui le club réunit aujourd'hui une cinquantaine de membres actifs, avec une
-              moyenne d'âge de 29 ans et 26 % de joueuses.
+            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {BUREAU.map((p, i) => (
+                <PersonCard key={p.role} person={p} index={i} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="profs" className="scroll-mt-24 px-4 py-16 sm:py-20">
+          <div className="mx-auto max-w-6xl">
+            <h2 className="text-4xl text-electric sm:text-5xl">L'équipe pédagogique</h2>
+            <div className="mt-3 h-1.5 w-24 bg-coral" />
+            <p className="mt-4 max-w-2xl font-semibold text-muted-foreground">
+              Trois professeurs, trois niveaux, une même méthode : on apprend en jouant, tous les
+              jeudis à 20h.
             </p>
+            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {PROFS.map((p, i) => (
+                <PersonCard key={p.role} person={p} index={i + 1} />
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section
-        id="bureau"
-        className="scroll-mt-24 border-y-4 border-ink bg-muted px-4 py-16 sm:py-20"
-      >
-        <div className="mx-auto max-w-6xl">
-          <h2 className="text-4xl text-electric sm:text-5xl">Le bureau</h2>
-          <div className="mt-3 h-1.5 w-24 bg-coral" />
-          <p className="mt-4 max-w-2xl font-semibold opacity-80">
-            Six bénévoles élus par les membres, qui font tourner le club toute l'année.
-          </p>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {BUREAU.map((p, i) => (
-              <PersonCard key={p.role} person={p} index={i} />
-            ))}
+        <section className="border-t-4 border-ink bg-electric px-4 py-16 text-background sm:py-20">
+          <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
+            <div>
+              <h2 className="text-3xl sm:text-4xl">Envie d'en savoir plus ?</h2>
+              <p className="mt-3 font-semibold opacity-90">
+                Pour plus de renseignements, écrivez-nous à qfjb@parisbridge.fr.
+              </p>
+            </div>
+            <a
+              href="mailto:qfjb@parisbridge.fr"
+              className="pop-btn bg-coral px-6 py-3 text-coral-foreground"
+            >
+              Nous écrire <Mail className="size-4" />
+            </a>
           </div>
-        </div>
-      </section>
-
-      <section id="profs" className="scroll-mt-24 px-4 py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="text-4xl text-electric sm:text-5xl">L'équipe pédagogique</h2>
-          <div className="mt-3 h-1.5 w-24 bg-coral" />
-          <p className="mt-4 max-w-2xl font-semibold opacity-80">
-            Trois professeurs, trois niveaux, une même méthode : on apprend en jouant, tous les
-            jeudis à 20h.
-          </p>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {PROFS.map((p, i) => (
-              <PersonCard key={p.role} person={p} index={i + 1} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-t-4 border-ink bg-electric px-4 py-16 text-background sm:py-20">
-        <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
-          <div>
-            <h2 className="text-3xl sm:text-4xl">Envie d'en savoir plus ?</h2>
-            <p className="mt-3 font-semibold opacity-90">
-              Pour plus de renseignements, écrivez-nous à qfjb@parisbridge.fr.
-            </p>
-          </div>
-          <a
-            href="mailto:qfjb@parisbridge.fr"
-            className="pop-btn bg-coral px-6 py-3 text-coral-foreground"
-          >
-            Nous écrire <Mail className="size-4" />
-          </a>
-        </div>
-      </section>
+        </section>
+      </main>
 
       <PageFooter />
     </div>

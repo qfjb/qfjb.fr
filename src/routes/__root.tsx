@@ -1,8 +1,7 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
   Link,
-  createRootRouteWithContext,
+  createRootRoute,
   useRouter,
   HeadContent,
   Scripts,
@@ -41,10 +40,10 @@ function NotFoundComponent() {
         <div className="pop-card w-full max-w-lg p-8 text-center sm:p-10">
           <p className="font-accent text-8xl leading-none text-coral">404</p>
           <h1 className="mt-4 text-2xl">Page introuvable</h1>
-          <p className="mt-3 font-semibold text-foreground/80">
+          <p className="mt-3 font-semibold text-muted-foreground">
             Cette page n'existe pas ou a changé de place.
           </p>
-          <p className="mt-1 font-semibold text-foreground/80">
+          <p className="mt-1 font-semibold text-muted-foreground">
             La table, elle, est toujours dressée : tous les jeudis à 20h.
           </p>
           <Link to="/" className="pop-btn mt-8 bg-coral px-6 py-3 text-coral-foreground">
@@ -69,7 +68,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
       <SuitRow className="text-electric" />
       <div className="pop-card w-full max-w-lg p-8 text-center sm:p-10">
         <h1 className="text-2xl">Cette page n'a pas pu se charger</h1>
-        <p className="mt-3 font-semibold text-foreground/80">
+        <p className="mt-3 font-semibold text-muted-foreground">
           Un souci est survenu de notre côté. Réessaie, ou reviens à l'accueil.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -91,7 +90,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
-export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
@@ -132,6 +131,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Space+Grotesk:wght@500;700&family=Source+Sans+3:wght@400;600;700;800&display=swap",
       },
       { rel: "icon", type: "image/png", href: "/favicon.png" },
+      { rel: "apple-touch-icon", href: "/favicon.png" },
     ],
   }),
   shellComponent: RootShell,
@@ -155,12 +155,6 @@ function RootShell({ children }: { children: ReactNode }) {
 }
 
 function RootComponent() {
-  const { queryClient } = Route.useRouteContext();
-
-  return (
-    <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
-    </QueryClientProvider>
-  );
+  // Required: nested routes render here. Removing <Outlet /> breaks all child routes.
+  return <Outlet />;
 }

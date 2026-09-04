@@ -37,35 +37,23 @@ mais il lui faut une clé d'accès Web3Forms pour envoyer les emails.
 - [ ] Quand `https://qfjb.fr` sera en ligne (voir « Avant la mise en ligne ») :
       soumettre le sitemap dans Google Search Console, et vérifier le rendu des
       partages avec les debuggers Facebook / LinkedIn / le validateur Twitter Card.
-- [ ] Remplacer éventuellement `logo-banniere.jpg` par un visuel dédié 1200×630
-      (ratio idéal ~1.91:1) une fois la plaquette prête.
+- [ ] Visuel `og:image` dédié en 1200×630 (ratio 1.91:1) — le 16:9 actuel
+      fonctionne mais est recadré par les réseaux.
 
-## Accessibilité / perf (nice-to-have)
+## Perf / accessibilité
 
-- [ ] Lien d'évitement « Aller au contenu » en tête de page (a11y clavier).
-- [ ] Optimiser le poids des images : `logo-banniere.jpg` fait 619 Ko, plusieurs
+- [ ] Icône `apple-touch-icon` **180×180 dédiée** — pointe pour l'instant sur
+      `/favicon.png`, trop petit (upscaling flou à l'ajout à l'écran d'accueil iOS).
+- [ ] Optimiser le poids des images : `logo-banniere.jpg` ~620 Ko, plusieurs
       photos > 200 Ko. Convertir en WebP + ajouter `srcset` pour le responsive.
 
-## Cohérence visuelle — reste à faire (lot C, à la reprise du contenu)
+## Contenu
 
-- [x] Coupe Epsilon : date unifiée sur « dimanche 13 septembre 2026 à 14h »
-      (accueil + section dédiée + agenda de `evenements.tsx`).
-- [x] Section « Le déroulé de la soirée » retirée de `evenements.tsx` (l'agenda
-      reprend le rôle de section grise, alternance conservée).
-- [x] « 2 cours gratuits » → « cours gratuits » (tous les cours sont gratuits) :
-      remplacement homogénéisé sur les 4 pages + méta + textes « deux cours ».
-- [ ] Harmoniser la taille des `<h3>` de cartes (`text-xl` vs `text-2xl` selon
-      les sections) et les 3 façons de faire du texte atténué
-      (`text-muted-foreground` / `opacity-80` / `text-foreground/80`).
-- [ ] Titres forcés en capitales via CSS : surveiller la lisibilité des titres
-      longs sur les nouveaux contenus.
+- [ ] Cartes du bureau (`equipe.tsx`) : monogramme + nom + rôle seulement.
+      Ajouter une phrase de présentation par personne quand le contenu sera
+      dispo (le champ `bio` du type `Person` est déjà prêt et optionnel).
 
-## Ménage (optionnel)
+## À surveiller
 
-- [x] `equipe.tsx` : footer inline dégradé remplacé par `<PageFooter />`.
-- [x] `src/assets/groupe_bordeaux.jpeg` supprimé (inutilisé).
-- [ ] `@tanstack/react-query` est branché (`QueryClientProvider`) mais inutilisé.
-      Le garder si on prévoit des données dynamiques, sinon le retirer.
-- [ ] `src/components/ui/` contient beaucoup de composants shadcn non utilisés
-      (sidebar, carousel, chart, form…). Élaguer ce qui ne sert pas.
-- [ ] `--mint` dans `styles.css` : défini et mappé mais utilisé nulle part.
+- Titres forcés en capitales via CSS : garder un œil sur la lisibilité des
+  titres longs au fil des nouveaux contenus.

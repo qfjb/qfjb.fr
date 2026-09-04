@@ -36,7 +36,7 @@ L'objectif principal est de **dépoussiérer l'image du bridge**, de séduire un
 
 - **Tone:** Accueillant, dynamique, direct, avec une pointe d'humour. Désamorce le côté "austère" traditionnellement associé au bridge.
 - **Visual Style:** Inspiré de la plaquette du club, trouvable ici : src\assets\Ebauche Plaquette QFJB.pdf
-- **Colors:** Bleu nuit (`#0F2C59`), Rouge/Corail (`#E63946`), Fond Slate/Blanc (`#F8FAFC`).
+- **Colors:** Bleu nuit (`#0B397D`), Rouge/Corail (`#E5002B`), Fond Slate/Blanc (`#F8FAFC`).
 
 ## Key Key Information
 
@@ -47,13 +47,13 @@ L'objectif principal est de **dépoussiérer l'image du bridge**, de séduire un
 
 ## Informations techniques utiles à garder en mémoire
 
-- **Stack principal :** Vite + React 19 + TypeScript + Tailwind CSS v4 + TanStack Router + TanStack Query + React Start.
+- **Stack principal :** Vite + React 19 + TypeScript + Tailwind CSS v4 + TanStack Router + React Start. Pas de TanStack Query ni de shadcn/ui : le site est en Tailwind brut + `lucide-react`, aucun autre composant tiers.
 - **Structure de routes :** Le site est organisé par routes fichier dans `src/routes/` : accueil, équipe, événements, vie du club. La route racine est gérée dans `src/routes/__root.tsx` et le fichier `src/routeTree.gen.ts` est généré automatiquement.
-- **Composants partagés :** Le chrome commun du site (header/footer) est centralisé dans `src/components/page-chrome.tsx` et réutilisé sur **toutes** les pages internes (`PageHeader` inclut un menu mobile hamburger + CTA « Venir un jeudi » vers `/#infos`, `PageFooter` la barre de bas de page). Ne pas réimplémenter de footer inline dans une route.
+- **Composants partagés :** Le chrome du site est centralisé dans `src/components/page-chrome.tsx` : `SkipLink` (lien d'évitement), `PageHeader` (menu mobile hamburger + CTA « Venir un jeudi » vers `/#infos`, état actif de la nav), `PageFooter`. **Utilisés sur les 4 pages** — l'accueil ne réimplémente plus son header. Chaque page enveloppe son contenu dans `<main id="contenu" tabindex="-1">`. Ne rien réimplémenter inline.
 - **Design system :** La palette est définie dans `src/styles.css` avec les couleurs de marque : bleu nuit, corail/rouge, fond clair, `lemon` = accent chaud pour les éléments mis en avant. Esthétique “pop/neobrutaliste” : bordures épaisses, ombres portées (`shadow-pop`), boutons à fort contraste (`pop-btn` / `pop-card` / `pop-badge`). Alternance des sections : blanc ↔ `bg-muted` (gris), les sections colorées/grises portent une bordure `border-y-4 border-ink` ; les ancres internes utilisent `scroll-mt-24` pour ne pas passer sous le header collant.
 - **Échelle d'espacement des sections (à respecter) :** section = `py-16 sm:py-20` (partout, y compris les bandeaux et CTA de fin) ; titre → trait corail (`h-1.5 w-24 bg-coral`) = `mt-3` ; titre → paragraphe d'intro = `mt-4` ; bloc titre → grille/liste de contenu = `mt-10` ; badge → titre = `mt-5`. Les hero : h1 `mt-6` → paragraphe, pas de trait corail sous le h1.
 - **Typographie :** `Montserrat` pour les titres (h1 en `800`, h2/h3 en `700`) — reprend la police de la bannière/plaquette. `Space Grotesk` via l'utilitaire `font-accent` pour les chiffres et infos de cartes (stats, valeurs d'agenda, prénoms de témoignages, monogrammes, « 404 »). `Source Sans 3` pour le texte courant. Titres en capitales, `letter-spacing: 0.01em` (cf. `styles.css`). L'utilitaire `font-display` (= Montserrat) ne reste que sur le wordmark du header.
-- **Assets :** Les images du club sont importées depuis `src/assets/` ; certains fichiers utilisent des `.asset.json` pour exposer des métadonnées d’image + URL.
+- **Assets :** Les images du club sont importées depuis `src/assets/` (Vite les hashe et les copie dans `dist/client/assets/`). Chaque `<img>` porte un `width`/`height` = dimensions réelles du fichier, pour éviter le décalage au chargement.
 - **Commandes locales :**
   - `npm install`
   - `npm run dev` pour lancer le site localement

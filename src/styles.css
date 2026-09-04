@@ -28,7 +28,6 @@
   --color-coral: var(--coral);
   --color-coral-foreground: var(--coral-foreground);
   --color-lemon: var(--lemon);
-  --color-mint: var(--mint);
   --shadow-pop: 6px 6px 0 0 var(--ink);
   --shadow-pop-sm: 3px 3px 0 0 var(--ink);
   --shadow-pop-lg: 10px 10px 0 0 var(--ink);
@@ -85,7 +84,6 @@
   --coral-foreground: oklch(0.99 0 0);
   /* Accent chaud pour les éléments "mis en avant" (carte agenda phare, badges). */
   --lemon: oklch(0.9 0.13 95);
-  --mint: oklch(0.88 0.05 250);
   --background: oklch(0.97 0.006 264);
   --foreground: oklch(0.28 0.09 264);
   --card: oklch(1 0 0);
@@ -97,7 +95,7 @@
   --secondary: oklch(0.56 0.23 27);
   --secondary-foreground: oklch(0.99 0 0);
   --muted: oklch(0.94 0.008 264);
-  --muted-foreground: oklch(0.5 0.04 264);
+  --muted-foreground: oklch(0.44 0.04 264);
   --accent: oklch(0.93 0.02 264);
   --accent-foreground: oklch(0.28 0.09 264);
   --destructive: oklch(0.56 0.23 27);
@@ -178,6 +176,22 @@
 
   h1 {
     font-weight: 800;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+
+    .pop-btn:hover,
+    .pop-btn:active {
+      transform: none;
+    }
   }
 }
 
