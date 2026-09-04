@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { Send } from "lucide-react";
 
 /**
@@ -151,7 +152,11 @@ export function ContactForm() {
           className="mt-1 size-4 shrink-0 accent-coral"
         />
         <span>
-          J'accepte que mon message et mon email soient utilisés par le QFJB pour me recontacter.
+          J'accepte que mon message et mon email soient utilisés par le QFJB pour me recontacter.{" "}
+          <Link to="/confidentialite" className="underline underline-offset-2 hover:text-coral">
+            En savoir plus
+          </Link>
+          .
         </span>
       </label>
 

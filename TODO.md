@@ -24,14 +24,6 @@ mais il lui faut une clé d'accès Web3Forms pour envoyer les emails.
 - [ ] Une fois le SSL actif, ajouter dans `public/.htaccess` une redirection
       HTTP → HTTPS (RewriteCond `%{HTTPS} off`).
 
-## Suites liées
-
-- [ ] Créer une page **politique de confidentialité** (qui collecte quoi,
-      Web3Forms comme relais, durée de conservation) et la lier depuis la case
-      de consentement du formulaire.
-- [ ] Déploiement : documenter/scripter l'upload de `dist/client/` en FTP sur
-      l'hébergement OVH (voir la note « Déploiement » dans `CLAUDE.md`).
-
 ## SEO / partage social
 
 - [ ] Quand `https://qfjb.fr` sera en ligne (voir « Avant la mise en ligne ») :

@@ -494,8 +494,11 @@ function Index() {
           <ContactForm />
         </div>
 
-        <div className="mx-auto mt-12 max-w-6xl px-4 text-sm font-bold uppercase opacity-70">
-          © {new Date().getFullYear()} Quai Francilien des Jeunes Bridgeurs
+        <div className="mx-auto mt-12 flex max-w-6xl flex-wrap gap-x-4 gap-y-1 px-4 text-sm font-bold uppercase opacity-70">
+          <span>© {new Date().getFullYear()} Quai Francilien des Jeunes Bridgeurs</span>
+          <Link to="/confidentialite" className="underline underline-offset-2 hover:text-coral">
+            Confidentialité
+          </Link>
         </div>
       </footer>
     </div>

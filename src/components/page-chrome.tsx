@@ -112,7 +112,12 @@ export function PageFooter() {
     <footer className="border-t-4 border-ink bg-card px-4 py-10">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 text-sm font-bold uppercase opacity-70">
         <span>© {new Date().getFullYear()} Quai Francilien des Jeunes Bridgeurs</span>
-        <span>Neuilly-sur-Seine · qfjb@parisbridge.fr</span>
+        <span className="flex flex-wrap items-center gap-x-3 gap-y-1">
+          <span>Neuilly-sur-Seine · qfjb@parisbridge.fr</span>
+          <Link to="/confidentialite" className="underline underline-offset-2 hover:text-coral">
+            Confidentialité
+          </Link>
+        </span>
       </div>
     </footer>
   );
