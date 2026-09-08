@@ -47,7 +47,37 @@ Options :
    répertoire web (`/www`). Bien inclure les fichiers cachés : **`.htaccess`**.
 4. Ne rien envoyer d'autre (`dist/server/` reste en local).
 
-## 4. Vérifications après déploiement
+## 4. Déploiement automatique (GitHub Actions)
+
+Workflow : [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml). À chaque
+**push sur `main`** (ou lancement manuel depuis l'onglet _Actions_) : `npm ci` →
+`tsc` + `lint` (garde-fous) → `npm run build` → `node scripts/deploy.mjs --no-build`
+(upload FTP de `dist/client/`).
+
+À configurer une seule fois dans **Settings → Secrets and variables → Actions** :
+
+| Type     | Nom                         | Valeur                                                                                    |
+| -------- | --------------------------- | ----------------------------------------------------------------------------------------- |
+| Secret   | `FTP_HOST`                  | ex. `ftp.clusterXXX.hosting.ovh.net`                                                      |
+| Secret   | `FTP_USER`                  | identifiant FTP OVH                                                                       |
+| Secret   | `FTP_PASSWORD`              | mot de passe FTP (idéalement un utilisateur FTP dédié, à faire tourner de temps en temps) |
+| Secret   | `VITE_WEB3FORMS_ACCESS_KEY` | la clé Web3Forms                                                                          |
+| Variable | `FTP_REMOTE_DIR`            | racine web, défaut `/www` si non défini                                                   |
+| Variable | `FTP_SECURE`                | `true` si l'hébergement accepte le FTPS explicite, sinon `false` (défaut)                 |
+
+Notes :
+
+- L'offre OVH gratuite (100 Mo) n'accepte souvent que le **FTP simple** : les
+  identifiants transitent alors en clair (comme lors d'un dépôt manuel FileZilla).
+  Acceptable pour un site vitrine sans back-office ; pour du chiffré il faut
+  l'offre Perso (SFTP) ou un autre hébergeur (Cloudflare Pages, Netlify…).
+- Le workflow **ne se déclenche pas** tant que le travail est sur une autre
+  branche : il tourne au premier `push`/merge sur `main` une fois les secrets en
+  place.
+- `concurrency` empêche deux déploiements simultanés et ne coupe pas un upload
+  en cours.
+
+## 5. Vérifications après déploiement
 
 - `https://qfjb.fr` s'affiche, les 4 pages + `/confidentialite` répondent.
 - Une URL inexistante (`https://qfjb.fr/nimportequoi`) renvoie la page 404
@@ -58,7 +88,7 @@ Options :
   `qfjb@parisbridge.fr`.
 - HTTPS actif (voir `TODO.md` → « Avant la mise en ligne publique »).
 
-## 5. Notes
+## 6. Notes
 
 - Le `.htaccess` (`public/.htaccess`) gère le repli 404, le cache long des
   assets hashés et la compression. Il est copié tel quel dans `dist/client/`.
