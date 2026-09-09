@@ -1,34 +1,29 @@
 # TODO
 
-## Formulaire de contact — configuration Web3Forms (manuel)
+## Formulaire de contact
 
-Le composant [`src/components/contact-form.tsx`](src/components/contact-form.tsx) est prêt,
-mais il lui faut une clé d'accès Web3Forms pour envoyer les emails.
+- [x] Clé Web3Forms configurée dans `.env` (`VITE_WEB3FORMS_ACCESS_KEY`).
+- [ ] Envoyer un vrai message test via le formulaire et vérifier la réception
+      sur `qfjb@parisbridge.fr`.
+- [ ] Pour le déploiement automatique : ajouter la clé en **secret GitHub
+      Actions** `VITE_WEB3FORMS_ACCESS_KEY` (cf. `DEPLOY.md`).
 
-- [ ] Aller sur https://web3forms.com et saisir l'adresse `qfjb@parisbridge.fr`
-- [ ] Valider le mail de confirmation reçu, puis copier l'**Access Key**
-- [ ] `cp .env.example .env` et coller la clé dans `VITE_WEB3FORMS_ACCESS_KEY=`
-- [ ] Tester en local avec `npm run dev` (envoyer un message test)
-- [ ] S'assurer que `.env` est présent sur la machine qui fait `npm run build`
-      avant l'upload FTP — la clé est injectée au build (site statique).
-      Sans clé, le formulaire s'affiche mais renvoie une erreur à l'envoi.
+## Mise en ligne
 
-## Avant la mise en ligne publique
-
-- [ ] **Activer HTTPS sur l'hébergement OVH** (certificat SSL gratuit Let's
-      Encrypt, à activer dans l'espace client OVH → rubrique Multisite/SSL,
-      actif sous ~24h). Tout le code utilise déjà `https://qfjb.fr` : rien à
-      changer, il suffit d'activer le certificat. Ne pas partager le lien ni
-      soumettre le sitemap avant que `https://qfjb.fr` réponde — sinon les
-      vignettes de partage (og:image) et le sitemap pointeront dans le vide.
-- [ ] Une fois le SSL actif, ajouter dans `public/.htaccess` une redirection
-      HTTP → HTTPS (RewriteCond `%{HTTPS} off`).
+- [x] HTTPS activé sur OVH (Let's Encrypt, `qfjb.fr` + `www.qfjb.fr`).
+- [x] Redirections `http → https` et `www → non-www` dans `public/.htaccess`.
+- [ ] Déployer la version avec le nouveau `.htaccess` (via FileZilla ou
+      `npm run deploy`) et vérifier :
+      - `http://qfjb.fr` et `https://www.qfjb.fr` redirigent bien vers
+        `https://qfjb.fr` ;
+      - une URL inexistante affiche la page 404 stylée ;
+      - le formulaire de contact envoie bien un email.
 
 ## SEO / partage social
 
-- [ ] Quand `https://qfjb.fr` sera en ligne (voir « Avant la mise en ligne ») :
-      soumettre le sitemap dans Google Search Console, et vérifier le rendu des
-      partages avec les debuggers Facebook / LinkedIn / le validateur Twitter Card.
+- [ ] Soumettre le sitemap (`https://qfjb.fr/sitemap.xml`) dans Google Search
+      Console ; vérifier le rendu des partages avec les debuggers Facebook /
+      LinkedIn / le validateur Twitter Card.
 - [ ] Visuel `og:image` dédié en 1200×630 (ratio 1.91:1) — le 16:9 actuel
       fonctionne mais est recadré par les réseaux.
 
@@ -44,9 +39,10 @@ mais il lui faut une clé d'accès Web3Forms pour envoyer les emails.
 - [ ] Cartes du bureau (`equipe.tsx`) : monogramme + nom + rôle seulement.
       Ajouter une phrase de présentation par personne quand le contenu sera
       dispo (le champ `bio` du type `Person` est déjà prêt et optionnel).
-- [ ] Retirer la carte "Tarif d'adhésion à compléter" : pas de tarif,
-      l'adhésion est gratuite, seule la licence ffb est payante
-      (gratuite jusqu'à 26 ans, gratuite la première année pour les adultes, sinon 65€)
+- [ ] (Optionnel) Faire apparaître quelque part l'info tarif : **adhésion
+      gratuite**, seule la licence FFB est payante (gratuite jusqu'à 26 ans,
+      1re année offerte pour les adultes, sinon 65 €). Bon argument de
+      recrutement — à mettre sur une future page « Rejoindre » ou une FAQ.
 
 ## À surveiller
 

@@ -13,7 +13,6 @@ import {
   Pizza,
   Smile,
   Layers,
-  Ticket,
   CalendarDays,
   Clock,
   MapPin,
@@ -385,7 +384,7 @@ function Index() {
         <section id="infos" className="scroll-mt-24 border-b-4 border-ink bg-muted py-16 sm:py-20">
           <div className="mx-auto max-w-6xl px-4">
             <SectionTitle>Infos pratiques</SectionTitle>
-            <div className="mt-10 grid gap-4 sm:grid-cols-2">
+            <div className="mt-10 grid gap-4 sm:grid-cols-3">
               {[
                 {
                   icon: MapPin,
@@ -397,7 +396,6 @@ function Index() {
                   label: "Horaires",
                   value: "Tous les jeudis (hors vacances scolaires) de 20h à 23h",
                 },
-                { icon: Ticket, label: "Tarif", value: "Tarif d'adhésion à compléter" },
                 {
                   icon: Mail,
                   label: "Contact",

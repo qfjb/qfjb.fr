@@ -1,6 +1,20 @@
 # QFJB — hébergement statique (Apache / OVH)
 # Le site est entièrement prérendu : chaque route a son propre index.html.
-# Ce fichier ne gère que le repli 404 et le cache des assets versionnés.
+
+# Force HTTPS + domaine canonique sans www (les deux certificats sont actifs).
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # www.qfjb.fr  ->  qfjb.fr  (en https directement, un seul saut)
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+  # http  ->  https  (OVH termine parfois le TLS en amont : on teste aussi
+  # X-Forwarded-Proto pour éviter une boucle de redirection)
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
 
 ErrorDocument 404 /404.html
 
