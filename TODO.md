@@ -44,6 +44,14 @@
       1re année offerte pour les adultes, sinon 65 €). Bon argument de
       recrutement — à mettre sur une future page « Rejoindre » ou une FAQ.
 
+## Maintenance / dette technique
+
+- [ ] Remplacer les icônes `lucide-react` marquées *deprecated* : `Instagram` et
+      `Facebook` (icônes de marques retirées progressivement par lucide) dans les
+      liens réseaux sociaux de `index.tsx`. Elles fonctionnent encore mais
+      disparaîtront à une future montée de version.
+- [ ] Import mort : `Mic` n'est plus utilisé dans `index.tsx`.
+
 ## À surveiller
 
 - Titres forcés en capitales via CSS : garder un œil sur la lisibilité des

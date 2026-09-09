@@ -111,17 +111,17 @@ const EQUIPES_JEUNES = [
 const TEMOIGNAGES = [
   {
     quote: "J'ai rencontré mon chéri à la soirée de Noël du QFJB !",
-    name: "Lucie Barratault",
+    name: "Lucie",
   },
   {
     quote:
       "J'ai très vite été séduit par l'ambiance du club et la possibilité de profiter de cours gratuitement. Grâce au QFJB je me suis constitué un nouveau cercle d'amis avec qui je prends plaisir à jouer en compétition.",
-    name: "Pierre Ollivier",
+    name: "Pierre",
   },
   {
     quote:
       "D'excellents profs, des fous rires, des pizzas gratuites et des soirées qui se terminent au bar à pas d'heure… Facile dans le top 3 des moments de ma semaine !",
-    name: "Chloé Sack",
+    name: "Chloé",
   },
 ];
 
