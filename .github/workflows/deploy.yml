@@ -1,0 +1,42 @@
+name: Déploiement
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Un seul déploiement à la fois ; on ne coupe pas un upload en cours.
+concurrency:
+  group: deploy-ftp
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      # Garde-fous : on ne déploie pas du code cassé.
+      - run: npx tsc --noEmit
+      - run: npm run lint
+
+      - name: Build
+        run: npm run build
+        env:
+          VITE_WEB3FORMS_ACCESS_KEY: ${{ secrets.VITE_WEB3FORMS_ACCESS_KEY }}
+
+      - name: Upload FTP (dist/client/ uniquement)
+        run: node scripts/deploy.mjs --no-build
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USER: ${{ secrets.FTP_USER }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_REMOTE_DIR: ${{ vars.FTP_REMOTE_DIR || '/www' }}
+          FTP_SECURE: ${{ vars.FTP_SECURE || 'false' }}
