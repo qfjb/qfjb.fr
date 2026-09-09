@@ -44,6 +44,9 @@ mais il lui faut une clé d'accès Web3Forms pour envoyer les emails.
 - [ ] Cartes du bureau (`equipe.tsx`) : monogramme + nom + rôle seulement.
       Ajouter une phrase de présentation par personne quand le contenu sera
       dispo (le champ `bio` du type `Person` est déjà prêt et optionnel).
+- [ ] Retirer la carte "Tarif d'adhésion à compléter" : pas de tarif,
+      l'adhésion est gratuite, seule la licence ffb est payante
+      (gratuite jusqu'à 26 ans, gratuite la première année pour les adultes, sinon 65€)
 
 ## À surveiller
 
