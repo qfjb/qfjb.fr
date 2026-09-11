@@ -1,8 +1,10 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Mail, Spade, Heart, Diamond, Club, GraduationCap, Users } from "lucide-react";
 
 import { SkipLink, PageHeader, PageFooter } from "@/components/page-chrome";
 import soireeClub from "@/assets/bridge-table2.jpg";
+import profMargaux from "@/assets/prof-margaux.jpg";
+import profPierre from "@/assets/prof-pierre.jpg";
 
 export const Route = createFileRoute("/equipe")({
   head: () => ({
@@ -32,6 +34,7 @@ type Person = {
   tag?: string;
   bio?: string;
   photo?: string;
+  suit?: typeof Spade;
 };
 
 const BUREAU: Person[] = [
@@ -49,29 +52,36 @@ const PROFS: Person[] = [
     role: "Cours confirmés & compétition",
     tag: "Le stratège",
     bio: "Enchères modernes, techniques avancées de jeu de la carte. Pour les compétiteurs expérimentés.",
+    photo: profPierre,
+    suit: Diamond,
   },
   {
     name: "Louis",
     role: "Cours intermédiaires",
     tag: "Le petit génie",
     bio: "Pour ceux qui veulent passer de la théorie à la pratique : une fois les bases maitrisées on se prépare à se lancer dans les compétitions.",
+    suit: Club,
   },
   {
     name: "Margaux",
     role: "Cours débutants",
     tag: "La prof cool",
     bio: "Initiation en détente : on apprend les règles et les bases des enchères pour déjà commencer à s'amuser.",
+    photo: profMargaux,
+    suit: Heart,
   },
 ];
 
 const SUITS = [Spade, Heart, Diamond, Club];
 
 function PersonCard({ person, index }: { person: Person; index: number }) {
-  // Trèfle pour les vice-président·es, sinon rotation des enseignes.
-  const Suit = person.role.startsWith("Vice-président") ? Club : SUITS[index % SUITS.length]!;
+  // Enseigne explicite si fournie, trèfle pour les vice-président·es,
+  // sinon rotation des enseignes.
+  const Suit =
+    person.suit ?? (person.role.startsWith("Vice-président") ? Club : SUITS[index % SUITS.length]!);
   return (
     <article className="pop-card overflow-hidden">
-      <div className="relative flex h-56 items-center justify-center border-b-4 border-ink bg-electric">
+      <div className="relative flex aspect-square items-center justify-center border-b-4 border-ink bg-electric">
         {person.photo ? (
           <img
             src={person.photo}

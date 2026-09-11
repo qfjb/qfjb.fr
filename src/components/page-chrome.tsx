@@ -114,6 +114,9 @@ export function PageFooter() {
         <span>© {new Date().getFullYear()} Quai Francilien des Jeunes Bridgeurs</span>
         <span className="flex flex-wrap items-center gap-x-3 gap-y-1">
           <span>Neuilly-sur-Seine · qfjb@parisbridge.fr</span>
+          <Link to="/mentions-legales" className="underline underline-offset-2 hover:text-coral">
+            Mentions légales
+          </Link>
           <Link to="/confidentialite" className="underline underline-offset-2 hover:text-coral">
             Confidentialité
           </Link>

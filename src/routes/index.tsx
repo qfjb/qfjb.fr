@@ -26,13 +26,14 @@ import {
 import { ContactForm } from "@/components/contact-form";
 import { SkipLink, PageHeader } from "@/components/page-chrome";
 
-import coursJeudi from "@/assets/bridge-table3.jpg";
 import coursTable from "@/assets/bridge-table4.jpg";
-import afficheEpsilon from "@/assets/coupe-epsilon.jpeg";
 import banniere from "@/assets/logo-banniere.jpg";
-import tableJeu from "@/assets/bridge-table.jpg";
+import ambianceJeudi1 from "@/assets/cours-jeudi1.jpg";
+import ambianceJeudi2 from "@/assets/cours-jeudi2.jpg";
+import ambianceJeudi3 from "@/assets/cours-jeudi3.jpg";
+import coursJeudi from "@/assets/bridge-table3.jpg";
+import tableJeu from "@/assets/bridge-table1.jpg";
 import groupeMembres from "@/assets/club-group.jpg";
-import joueuses from "@/assets/girl-power.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -236,47 +237,34 @@ function Index() {
         {/* Événement phare */}
         <section className="border-b-4 border-ink py-16 sm:py-20">
           <div className="mx-auto max-w-6xl px-4">
-            <div className="grid gap-8 lg:grid-cols-[auto_minmax(0,1fr)] lg:items-center lg:justify-center">
-              <div className="flex justify-center lg:justify-start">
-                <img
-                  src={afficheEpsilon}
-                  alt="Affiche de la Coupe Epsilon du QFJB"
-                  width={1054}
-                  height={1492}
-                  className="pop-card w-full max-w-[28rem] object-contain p-3"
-                />
-              </div>
-              <div className="w-full max-w-[30rem] lg:justify-self-start">
-                <span className="pop-badge bg-coral text-coral-foreground">
-                  <Trophy className="size-3.5" /> Événement phare
-                </span>
-                <h2 className="mt-5 text-4xl text-electric sm:text-5xl">La Coupe Epsilon</h2>
-                <div className="mt-3 h-1.5 w-24 bg-coral" />
-                <p className="mt-4 text-lg font-semibold text-muted-foreground">
-                  Le QFJB organise avec le Comité de Paris la Coupe Epsilon ! Venez nombreux le
-                  dimanche 13 septembre 2026 à 14h pour un tournoi convivial où les générations sont
-                  mélangées : un joueur de moins de 31 ans joue avec un joueur de plus de 31 ans.
-                </p>
-                <div className="mt-10 grid gap-3 sm:grid-cols-3">
-                  {[
-                    { icon: CalendarDays, value: "13 septembre" },
-                    { icon: Clock, value: "14h" },
-                    { icon: MapPin, value: "Paris" },
-                  ].map((item) => (
-                    <div key={item.value} className="pop-card p-4 text-center">
-                      <item.icon className="mx-auto size-6 text-coral" />
-                      <p className="mt-2 font-accent text-xl text-electric">{item.value}</p>
-                    </div>
-                  ))}
+            <span className="pop-badge bg-coral text-coral-foreground">
+              <Trophy className="size-3.5" /> Événement phare
+            </span>
+            <h2 className="mt-5 text-4xl text-electric sm:text-5xl">La Coupe Epsilon</h2>
+            <div className="mt-3 h-1.5 w-24 bg-coral" />
+            <p className="mt-4 max-w-2xl text-lg font-semibold text-muted-foreground">
+              Le QFJB organise avec le Comité de Paris la Coupe Epsilon ! Venez nombreux le dimanche
+              13 septembre 2026 à 14h pour un tournoi convivial où les générations sont mélangées :
+              un joueur de moins de 31 ans joue avec un joueur de plus de 31 ans.
+            </p>
+            <div className="mt-10 grid max-w-2xl gap-3 sm:grid-cols-3">
+              {[
+                { icon: CalendarDays, value: "13 septembre" },
+                { icon: Clock, value: "14h" },
+                { icon: MapPin, value: "Paris" },
+              ].map((item) => (
+                <div key={item.value} className="pop-card p-4 text-center">
+                  <item.icon className="mx-auto size-6 text-coral" />
+                  <p className="mt-2 font-accent text-xl text-electric">{item.value}</p>
                 </div>
-                <Link
-                  to="/evenements"
-                  className="pop-btn mt-8 bg-coral px-6 py-3 text-coral-foreground"
-                >
-                  Découvrir l'événement <ArrowRight className="size-4" />
-                </Link>
-              </div>
+              ))}
             </div>
+            <Link
+              to="/evenements"
+              className="pop-btn mt-8 bg-coral px-6 py-3 text-coral-foreground"
+            >
+              Découvrir l'événement <ArrowRight className="size-4" />
+            </Link>
           </div>
         </section>
 
@@ -344,38 +332,57 @@ function Index() {
           <div className="mx-auto max-w-6xl px-4">
             <SectionTitle>L'ambiance du club</SectionTitle>
             <div className="mt-10 grid gap-4 sm:grid-cols-3">
-              <img
-                src={coursTable}
-                alt="Autour de la table pendant le cours du jeudi soir"
-                width={2048}
-                height={1536}
-                loading="lazy"
-                className="pop-card col-span-2 h-64 w-full object-cover sm:h-80"
-              />
-              <img
-                src={joueuses}
-                alt="Joueuses du QFJB autour d'une table de bridge"
-                width={1600}
-                height={1200}
-                loading="lazy"
-                className="pop-card h-64 w-full object-cover sm:h-80"
-              />
-              <img
-                src={coursJeudi}
-                alt="Cours de bridge du jeudi soir au QFJB"
-                width={2048}
-                height={1536}
-                loading="lazy"
-                className="pop-card h-64 w-full object-cover sm:h-80"
-              />
-              <img
-                src={tableJeu}
-                alt="Jeunes joueurs autour d'une table de cartes un jeudi soir"
-                width={1318}
-                height={922}
-                loading="lazy"
-                className="pop-card col-span-2 h-64 w-full object-cover sm:h-80"
-              />
+              {[
+                {
+                  src: tableJeu,
+                  alt: "Jeunes joueurs autour d'une table de cartes un jeudi soir",
+                  width: 1318,
+                  height: 922,
+                  wide: true,
+                },
+                {
+                  src: coursJeudi,
+                  alt: "Cours de bridge du jeudi soir au QFJB",
+                  width: 2048,
+                  height: 1536,
+                },
+                {
+                  src: coursTable,
+                  alt: "Autour de la table pendant le cours du jeudi soir",
+                  width: 2048,
+                  height: 1536,
+                },
+                {
+                  src: ambianceJeudi1,
+                  alt: "Membres du QFJB en pleine partie un jeudi soir",
+                  width: 2048,
+                  height: 1536,
+                  wide: true,
+                },
+                {
+                  src: ambianceJeudi2,
+                  alt: "Plusieurs tables de bridge pendant un cours du jeudi soir",
+                  width: 2048,
+                  height: 1536,
+                  wide: true,
+                },
+                {
+                  src: ambianceJeudi3,
+                  alt: "Ambiance d'un cours du jeudi soir au QFJB",
+                  width: 2048,
+                  height: 1536,
+                },
+              ].map((g) => (
+                <img
+                  key={g.alt}
+                  src={g.src}
+                  alt={g.alt}
+                  width={g.width}
+                  height={g.height}
+                  loading="lazy"
+                  className={`pop-card h-64 w-full object-cover sm:h-80 ${g.wide ? "col-span-2" : ""}`}
+                />
+              ))}
             </div>
           </div>
         </section>
@@ -494,6 +501,9 @@ function Index() {
 
         <div className="mx-auto mt-12 flex max-w-6xl flex-wrap gap-x-4 gap-y-1 px-4 text-sm font-bold uppercase opacity-70">
           <span>© {new Date().getFullYear()} Quai Francilien des Jeunes Bridgeurs</span>
+          <Link to="/mentions-legales" className="underline underline-offset-2 hover:text-coral">
+            Mentions légales
+          </Link>
           <Link to="/confidentialite" className="underline underline-offset-2 hover:text-coral">
             Confidentialité
           </Link>

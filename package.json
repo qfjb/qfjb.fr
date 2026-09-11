@@ -13,6 +13,7 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
+    "og-image": "node scripts/og-image.mjs",
     "deploy": "node --env-file-if-exists=.env.deploy scripts/deploy.mjs"
   },
   "dependencies": {
@@ -42,6 +43,7 @@
     "globals": "^15.15.0",
     "nitro": "3.0.260603-beta",
     "prettier": "^3.7.3",
+    "sharp": "^0.35.4",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.56.1",
     "vite": "^8.2.0"

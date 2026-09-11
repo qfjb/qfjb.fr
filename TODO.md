@@ -2,37 +2,21 @@
 
 ## Formulaire de contact
 
-- [x] Clé Web3Forms configurée dans `.env` (`VITE_WEB3FORMS_ACCESS_KEY`).
-- [ ] Envoyer un vrai message test via le formulaire et vérifier la réception
-      sur `qfjb@parisbridge.fr`.
 - [ ] Pour le déploiement automatique : ajouter la clé en **secret GitHub
       Actions** `VITE_WEB3FORMS_ACCESS_KEY` (cf. `DEPLOY.md`).
 
-## Mise en ligne
-
-- [x] HTTPS activé sur OVH (Let's Encrypt, `qfjb.fr` + `www.qfjb.fr`).
-- [x] Redirections `http → https` et `www → non-www` dans `public/.htaccess`.
-- [ ] Déployer la version avec le nouveau `.htaccess` (via FileZilla ou
-      `npm run deploy`) et vérifier :
-      - `http://qfjb.fr` et `https://www.qfjb.fr` redirigent bien vers
-        `https://qfjb.fr` ;
-      - une URL inexistante affiche la page 404 stylée ;
-      - le formulaire de contact envoie bien un email.
-
 ## SEO / partage social
 
-- [ ] Soumettre le sitemap (`https://qfjb.fr/sitemap.xml`) dans Google Search
-      Console ; vérifier le rendu des partages avec les debuggers Facebook /
-      LinkedIn / le validateur Twitter Card.
-- [ ] Visuel `og:image` dédié en 1200×630 (ratio 1.91:1) — le 16:9 actuel
-      fonctionne mais est recadré par les réseaux.
+- [ ] Vérifier le rendu des partages avec le validateur LinkedIn / Twitter Card
+      (Facebook déjà confirmé OK via le débogueur).
 
 ## Perf / accessibilité
 
 - [ ] Icône `apple-touch-icon` **180×180 dédiée** — pointe pour l'instant sur
       `/favicon.png`, trop petit (upscaling flou à l'ajout à l'écran d'accueil iOS).
 - [ ] Optimiser le poids des images : `logo-banniere.jpg` ~620 Ko, plusieurs
-      photos > 200 Ko. Convertir en WebP + ajouter `srcset` pour le responsive.
+      photos > 200 Ko. Convertir en WebP (`sharp` est déjà en devDependency,
+      cf. `scripts/og-image.mjs`) + ajouter `srcset` pour le responsive.
 
 ## Contenu
 
@@ -46,7 +30,7 @@
 
 ## Maintenance / dette technique
 
-- [ ] Remplacer les icônes `lucide-react` marquées *deprecated* : `Instagram` et
+- [ ] Remplacer les icônes `lucide-react` marquées _deprecated_ : `Instagram` et
       `Facebook` (icônes de marques retirées progressivement par lucide) dans les
       liens réseaux sociaux de `index.tsx`. Elles fonctionnent encore mais
       disparaîtront à une future montée de version.

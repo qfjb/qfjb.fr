@@ -10,7 +10,7 @@ import { useEffect, type ReactNode } from "react";
 import { ArrowLeft, Spade, Heart, Diamond, Club } from "lucide-react";
 
 import appCss from "../styles.css?url";
-import ogImage from "@/assets/logo-banniere.jpg";
+import ogImage from "@/assets/og-image.jpg";
 import { PageHeader } from "@/components/page-chrome";
 import { reportRuntimeError } from "../lib/runtime-error-reporting";
 
@@ -110,8 +110,8 @@ export const Route = createRootRoute({
       { property: "og:site_name", content: "QFJB" },
       { property: "og:locale", content: "fr_FR" },
       { property: "og:image", content: OG_IMAGE_URL },
-      { property: "og:image:width", content: "1799" },
-      { property: "og:image:height", content: "1012" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
       {
         property: "og:image:alt",
         content: "Bannière du Quai Francilien des Jeunes Bridgeurs",

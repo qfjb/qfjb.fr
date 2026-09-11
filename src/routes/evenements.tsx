@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import {
   ArrowRight,
   CalendarDays,
@@ -13,8 +13,7 @@ import {
 } from "lucide-react";
 
 import { SkipLink, PageHeader, PageFooter } from "@/components/page-chrome";
-import afficheEpsilon from "@/assets/coupe-epsilon.jpeg";
-import soireeClub from "@/assets/bridge-table2.jpg";
+import afficheEpsilon from "@/assets/coupe-epsilon.jpg";
 
 export const Route = createFileRoute("/evenements")({
   head: () => ({
@@ -177,33 +176,20 @@ function EvenementsPage() {
         </section>
 
         <section className="border-t-4 border-ink bg-electric px-4 py-16 text-background sm:py-20">
-          <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-2">
-            <img
-              src={soireeClub}
-              alt="Ambiance conviviale lors d'une soirée du club"
-              width={1600}
-              height={1200}
-              loading="lazy"
-              className="pop-card w-full object-cover"
-            />
+          <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
             <div>
               <h2 className="text-3xl sm:text-4xl">Une question sur un événement ?</h2>
               <p className="mt-3 font-semibold opacity-90">
                 Écrivez-nous à qfjb@parisbridge.fr, ou venez simplement un jeudi soir à 20h : on
                 vous expliquera tout autour d'une table.
               </p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <a
-                  href="mailto:qfjb@parisbridge.fr"
-                  className="pop-btn bg-coral px-6 py-3 text-coral-foreground"
-                >
-                  Nous écrire <Mail className="size-4" />
-                </a>
-                <Link to="/vie-du-club" className="pop-btn bg-card px-6 py-3 text-foreground">
-                  Vie du club <ArrowRight className="size-4" />
-                </Link>
-              </div>
             </div>
+            <a
+              href="mailto:qfjb@parisbridge.fr"
+              className="pop-btn bg-coral px-6 py-3 text-coral-foreground"
+            >
+              Nous écrire <Mail className="size-4" />
+            </a>
           </div>
         </section>
       </main>

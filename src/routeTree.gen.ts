@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ConfidentialiteRouteImport } from './routes/confidentialite'
 import { Route as EquipeRouteImport } from './routes/equipe'
 import { Route as EvenementsRouteImport } from './routes/evenements'
+import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
 import { Route as VieDuClubRouteImport } from './routes/vie-du-club'
 
 const IndexRoute = IndexRouteImport.update({
@@ -35,6 +36,11 @@ const EvenementsRoute = EvenementsRouteImport.update({
   path: '/evenements',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
+  id: '/mentions-legales',
+  path: '/mentions-legales',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const VieDuClubRoute = VieDuClubRouteImport.update({
   id: '/vie-du-club',
   path: '/vie-du-club',
@@ -46,6 +52,7 @@ export interface FileRoutesByFullPath {
   '/confidentialite': typeof ConfidentialiteRoute
   '/equipe': typeof EquipeRoute
   '/evenements': typeof EvenementsRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
   '/vie-du-club': typeof VieDuClubRoute
 }
 export interface FileRoutesByTo {
@@ -53,6 +60,7 @@ export interface FileRoutesByTo {
   '/confidentialite': typeof ConfidentialiteRoute
   '/equipe': typeof EquipeRoute
   '/evenements': typeof EvenementsRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
   '/vie-du-club': typeof VieDuClubRoute
 }
 export interface FileRoutesById {
@@ -61,20 +69,33 @@ export interface FileRoutesById {
   '/confidentialite': typeof ConfidentialiteRoute
   '/equipe': typeof EquipeRoute
   '/evenements': typeof EvenementsRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
   '/vie-du-club': typeof VieDuClubRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/confidentialite' | '/equipe' | '/evenements' | '/vie-du-club'
+    | '/'
+    | '/confidentialite'
+    | '/equipe'
+    | '/evenements'
+    | '/mentions-legales'
+    | '/vie-du-club'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/confidentialite' | '/equipe' | '/evenements' | '/vie-du-club'
+  to:
+    | '/'
+    | '/confidentialite'
+    | '/equipe'
+    | '/evenements'
+    | '/mentions-legales'
+    | '/vie-du-club'
   id:
     | '__root__'
     | '/'
     | '/confidentialite'
     | '/equipe'
     | '/evenements'
+    | '/mentions-legales'
     | '/vie-du-club'
   fileRoutesById: FileRoutesById
 }
@@ -83,6 +104,7 @@ export interface RootRouteChildren {
   ConfidentialiteRoute: typeof ConfidentialiteRoute
   EquipeRoute: typeof EquipeRoute
   EvenementsRoute: typeof EvenementsRoute
+  MentionsLegalesRoute: typeof MentionsLegalesRoute
   VieDuClubRoute: typeof VieDuClubRoute
 }
 
@@ -116,6 +138,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EvenementsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/mentions-legales': {
+      id: '/mentions-legales'
+      path: '/mentions-legales'
+      fullPath: '/mentions-legales'
+      preLoaderRoute: typeof MentionsLegalesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/vie-du-club': {
       id: '/vie-du-club'
       path: '/vie-du-club'
@@ -131,6 +160,7 @@ const rootRouteChildren: RootRouteChildren = {
   ConfidentialiteRoute: ConfidentialiteRoute,
   EquipeRoute: EquipeRoute,
   EvenementsRoute: EvenementsRoute,
+  MentionsLegalesRoute: MentionsLegalesRoute,
   VieDuClubRoute: VieDuClubRoute,
 }
 export const routeTree = rootRouteImport

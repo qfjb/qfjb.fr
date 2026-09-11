@@ -28,7 +28,7 @@ ErrorDocument 404 /404.html
 
 # Assets au nom hashé (immuables) : cache long
 <IfModule mod_headers.c>
-  <FilesMatch "\.(js|css|woff2?|jpg|jpeg|png|gif|webp|avif|svg)$">
+  <FilesMatch "\.(js|css|woff2?|jpg|jpg|png|gif|webp|avif|svg)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
   # Les pages HTML doivent toujours être revalidées

@@ -5,7 +5,7 @@
 # Fichiers binaires : jamais de conversion
 *.png binary
 *.jpg binary
-*.jpeg binary
+*.jpg binary
 *.gif binary
 *.webp binary
 *.avif binary

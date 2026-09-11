@@ -1,12 +1,12 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Trophy, Quote, Users, Globe } from "lucide-react";
+import { createFileRoute } from "@tanstack/react-router";
+import { Info, Trophy, Quote, Globe } from "lucide-react";
 
 import { SkipLink, PageHeader, PageFooter } from "@/components/page-chrome";
 import championsFrance2025 from "@/assets/open4performance2025.jpg";
-import groupeMembres from "@/assets/club-group.jpg";
-import tableJeu from "@/assets/bridge-table.jpg";
-import debriefBordeaux from "@/assets/debrief_bordeaux.jpg";
-import groupeBordeaux from "@/assets/groupe_bordeaux.jpeg";
+import festivalSaintes from "@/assets/qfjb-a-saintes.jpg";
+import joueuses from "@/assets/girl-power.jpg";
+import debriefBordeaux from "@/assets/debrief-bordeaux.jpg";
+import groupeBordeaux from "@/assets/groupe-bordeaux.jpg";
 
 export const Route = createFileRoute("/vie-du-club")({
   head: () => ({
@@ -260,8 +260,59 @@ function VieDuClubPage() {
           </div>
         </section>
 
-        {/* Témoignages */}
+        {/* Galerie */}
         <section className="px-4 py-16 sm:py-20">
+          <div className="mx-auto max-w-6xl">
+            <h2 className="text-4xl text-electric sm:text-5xl">Événements extérieurs</h2>
+            <div className="mt-3 h-1.5 w-24 bg-coral" />
+            <p className="mt-4 max-w-2xl font-semibold text-muted-foreground">
+              Nos membres ont aussi le plaisir de se retrouver lors de compétitions ou de festivals
+              de bridge.
+            </p>
+            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                {
+                  src: joueuses,
+                  alt: "Joueuses du QFJB autour d'une table de bridge",
+                  width: 1600,
+                  height: 1200,
+                },
+                {
+                  src: debriefBordeaux,
+                  alt: "Débrief entre membres du club à Bordeaux",
+                  width: 1160,
+                  height: 773,
+                },
+                {
+                  src: groupeBordeaux,
+                  alt: "Les membres du QFJB en déplacement à Bordeaux",
+                  width: 1504,
+                  height: 1066,
+                },
+                {
+                  src: festivalSaintes,
+                  alt: "Membres du QFJB au festival de bridge de Saintes",
+                  width: 1200,
+                  height: 1600,
+                  objectTop: true,
+                },
+              ].map((g) => (
+                <img
+                  key={g.alt}
+                  src={g.src}
+                  alt={g.alt}
+                  width={g.width}
+                  height={g.height}
+                  loading="lazy"
+                  className={`pop-card h-56 w-full object-cover ${g.objectTop ? "object-top" : ""}`}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Témoignages */}
+        <section className="border-y-4 border-ink bg-muted px-4 py-16 sm:py-20">
           <div className="mx-auto max-w-6xl">
             <h2 className="text-4xl text-electric sm:text-5xl">Témoignages</h2>
             <div className="mt-3 h-1.5 w-24 bg-coral" />
@@ -277,30 +328,6 @@ function VieDuClubPage() {
           </div>
         </section>
 
-        {/* Galerie */}
-        <section className="border-y-4 border-ink bg-muted px-4 py-16 sm:py-20">
-          <div className="mx-auto max-w-6xl">
-            <h2 className="text-4xl text-electric sm:text-5xl">L'ambiance du club</h2>
-            <div className="mt-3 h-1.5 w-24 bg-coral" />
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {[
-                { src: groupeMembres, alt: "Les membres du QFJB réunis" },
-                { src: tableJeu, alt: "Partie de bridge entre membres du club" },
-                { src: debriefBordeaux, alt: "Débrief entre membres du club à Bordeaux" },
-                { src: groupeBordeaux, alt: "Les membres du QFJB en déplacement à Bordeaux" },
-              ].map((g) => (
-                <img
-                  key={g.alt}
-                  src={g.src}
-                  alt={g.alt}
-                  loading="lazy"
-                  className="pop-card h-56 w-full object-cover"
-                />
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section className="border-t-4 border-ink bg-electric px-4 py-16 text-background sm:py-20">
           <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
             <div>
@@ -310,12 +337,9 @@ function VieDuClubPage() {
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
-              <Link to="/equipe" className="pop-btn bg-card px-6 py-3 text-foreground">
-                L'équipe <Users className="size-4" />
-              </Link>
-              <Link to="/evenements" className="pop-btn bg-coral px-6 py-3 text-coral-foreground">
-                Les événements <ArrowRight className="size-4" />
-              </Link>
+              <a href="/#infos" className="pop-btn bg-coral px-6 py-3 text-coral-foreground">
+                Infos <Info className="size-4" />
+              </a>
             </div>
           </div>
         </section>
