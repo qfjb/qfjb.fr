@@ -4,6 +4,7 @@ import { ArrowRight, Mail, Spade, Heart, Diamond, Club, GraduationCap, Users } f
 import { SkipLink, PageHeader, PageFooter } from "@/components/page-chrome";
 import soireeClub from "@/assets/bridge-table2.jpg";
 import profMargaux from "@/assets/prof-margaux.jpg";
+import profLouis from "@/assets/prof-louis.jpg";
 import profPierre from "@/assets/prof-pierre.jpg";
 
 export const Route = createFileRoute("/equipe")({
@@ -60,6 +61,7 @@ const PROFS: Person[] = [
     role: "Cours intermédiaires",
     tag: "Le petit génie",
     bio: "Pour ceux qui veulent passer de la théorie à la pratique : une fois les bases maitrisées on se prépare à se lancer dans les compétitions.",
+    photo: profLouis,
     suit: Club,
   },
   {
@@ -133,11 +135,11 @@ function EquipePage() {
               premier atelier jusqu'aux compétitions fédérales.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#bureau" className="pop-btn bg-card px-6 py-3 text-foreground">
-                Le bureau <ArrowRight className="size-4" />
-              </a>
               <a href="#profs" className="pop-btn bg-coral px-6 py-3 text-coral-foreground">
                 L'équipe pédagogique <GraduationCap className="size-4" />
+              </a>
+              <a href="#bureau" className="pop-btn bg-card px-6 py-3 text-foreground">
+                Le bureau <ArrowRight className="size-4" />
               </a>
             </div>
           </div>
@@ -170,9 +172,28 @@ function EquipePage() {
         </section>
 
         <section
-          id="bureau"
+          id="profs"
           className="scroll-mt-24 border-y-4 border-ink bg-muted px-4 py-16 sm:py-20"
         >
+          <div className="mx-auto max-w-6xl">
+            <span className="pop-badge bg-coral text-coral-foreground">
+              <GraduationCap className="size-3.5" /> À la une
+            </span>
+            <h2 className="mt-5 text-4xl text-electric sm:text-5xl">L'équipe pédagogique</h2>
+            <div className="mt-3 h-1.5 w-24 bg-coral" />
+            <p className="mt-4 max-w-2xl font-semibold text-muted-foreground">
+              Trois professeurs, trois niveaux, une même méthode : on apprend en jouant, tous les
+              jeudis à 20h.
+            </p>
+            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {PROFS.map((p, i) => (
+                <PersonCard key={p.role} person={p} index={i + 1} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="bureau" className="scroll-mt-24 px-4 py-16 sm:py-20">
           <div className="mx-auto max-w-6xl">
             <h2 className="text-4xl text-electric sm:text-5xl">Le bureau</h2>
             <div className="mt-3 h-1.5 w-24 bg-coral" />
@@ -182,22 +203,6 @@ function EquipePage() {
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {BUREAU.map((p, i) => (
                 <PersonCard key={p.role} person={p} index={i} />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="profs" className="scroll-mt-24 px-4 py-16 sm:py-20">
-          <div className="mx-auto max-w-6xl">
-            <h2 className="text-4xl text-electric sm:text-5xl">L'équipe pédagogique</h2>
-            <div className="mt-3 h-1.5 w-24 bg-coral" />
-            <p className="mt-4 max-w-2xl font-semibold text-muted-foreground">
-              Trois professeurs, trois niveaux, une même méthode : on apprend en jouant, tous les
-              jeudis à 20h.
-            </p>
-            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {PROFS.map((p, i) => (
-                <PersonCard key={p.role} person={p} index={i + 1} />
               ))}
             </div>
           </div>

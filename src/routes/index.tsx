@@ -355,8 +355,8 @@ function Index() {
                 {
                   src: ambianceJeudi1,
                   alt: "Membres du QFJB en pleine partie un jeudi soir",
-                  width: 2048,
-                  height: 1536,
+                  width: 1502,
+                  height: 1000,
                   wide: true,
                 },
                 {

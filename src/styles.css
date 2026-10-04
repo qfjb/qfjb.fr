@@ -28,6 +28,7 @@
   --color-coral: var(--coral);
   --color-coral-foreground: var(--coral-foreground);
   --color-lemon: var(--lemon);
+  --color-peach: var(--peach);
   --shadow-pop: 6px 6px 0 0 var(--ink);
   --shadow-pop-sm: 3px 3px 0 0 var(--ink);
   --shadow-pop-lg: 10px 10px 0 0 var(--ink);
@@ -76,33 +77,43 @@
 
 :root {
   --radius: 0.75rem;
-  /* QFJB brand: navy blue, red, white */
-  --ink: oklch(0.32 0.115 264);
-  --electric: oklch(0.38 0.14 264);
+  /* QFJB brand : palette officielle définie par l'équipe communication
+     (voir src/assets/palette_unifiee_qfjb.png). */
+  --ink: oklch(0.3009 0.1082 260.4); /* #082A63 — bleu nuit */
+  --electric: oklch(0.3521 0.1334 261); /* #0B357F — bleu principal */
   --electric-foreground: oklch(0.99 0 0);
-  --coral: oklch(0.56 0.23 27);
+  --coral: oklch(0.59 0.2396 25.7); /* #EA0023 — rouge */
   --coral-foreground: oklch(0.99 0 0);
-  /* Accent chaud pour les éléments "mis en avant" (carte agenda phare, badges). */
+  /* Accent chaud pour les éléments "mis en avant" (carte agenda phare, badges).
+     Jaune historique du site, hors palette officielle communication : le
+     substitut orange (#F67527) rendait mal en usage réel. */
   --lemon: oklch(0.9 0.13 95);
+  /* Accent doux pour les bandeaux décoratifs (page don). */
+  --peach: oklch(
+    0.9022 0.0549 49.8
+  ); /* #FED5BF — pêche clair, dans la
+    palette officielle mais pas encore utilisé pour les fonds (cf. ci-dessous). */
+  /* Fonds : on garde les gris/blancs précédents pour l'instant, le fond
+     crème #FDF9F1 de la palette officielle rendait mal en usage réel. */
   --background: oklch(0.97 0.006 264);
-  --foreground: oklch(0.28 0.09 264);
+  --foreground: oklch(0.2891 0 0); /* #2B2B2B — noir */
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.28 0.09 264);
+  --card-foreground: oklch(0.2891 0 0);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.28 0.09 264);
-  --primary: oklch(0.38 0.14 264);
+  --popover-foreground: oklch(0.2891 0 0);
+  --primary: oklch(0.3521 0.1334 261);
   --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.56 0.23 27);
+  --secondary: oklch(0.59 0.2396 25.7);
   --secondary-foreground: oklch(0.99 0 0);
   --muted: oklch(0.94 0.008 264);
-  --muted-foreground: oklch(0.44 0.04 264);
+  --muted-foreground: oklch(0.3678 0.0217 267.4); /* #3A3F4B — gris ardoise */
   --accent: oklch(0.93 0.02 264);
-  --accent-foreground: oklch(0.28 0.09 264);
-  --destructive: oklch(0.56 0.23 27);
+  --accent-foreground: oklch(0.2891 0 0);
+  --destructive: oklch(0.59 0.2396 25.7);
   --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.32 0.115 264);
-  --input: oklch(0.32 0.115 264);
-  --ring: oklch(0.38 0.14 264);
+  --border: oklch(0.3009 0.1082 260.4);
+  --input: oklch(0.3009 0.1082 260.4);
+  --ring: oklch(0.3521 0.1334 261);
 
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);

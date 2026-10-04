@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ConfidentialiteRouteImport } from './routes/confidentialite'
+import { Route as DonRouteImport } from './routes/don'
 import { Route as EquipeRouteImport } from './routes/equipe'
 import { Route as EvenementsRouteImport } from './routes/evenements'
 import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
@@ -24,6 +25,11 @@ const IndexRoute = IndexRouteImport.update({
 const ConfidentialiteRoute = ConfidentialiteRouteImport.update({
   id: '/confidentialite',
   path: '/confidentialite',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DonRoute = DonRouteImport.update({
+  id: '/don',
+  path: '/don',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EquipeRoute = EquipeRouteImport.update({
@@ -50,6 +56,7 @@ const VieDuClubRoute = VieDuClubRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/confidentialite': typeof ConfidentialiteRoute
+  '/don': typeof DonRoute
   '/equipe': typeof EquipeRoute
   '/evenements': typeof EvenementsRoute
   '/mentions-legales': typeof MentionsLegalesRoute
@@ -58,6 +65,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/confidentialite': typeof ConfidentialiteRoute
+  '/don': typeof DonRoute
   '/equipe': typeof EquipeRoute
   '/evenements': typeof EvenementsRoute
   '/mentions-legales': typeof MentionsLegalesRoute
@@ -67,6 +75,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/confidentialite': typeof ConfidentialiteRoute
+  '/don': typeof DonRoute
   '/equipe': typeof EquipeRoute
   '/evenements': typeof EvenementsRoute
   '/mentions-legales': typeof MentionsLegalesRoute
@@ -77,6 +86,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/confidentialite'
+    | '/don'
     | '/equipe'
     | '/evenements'
     | '/mentions-legales'
@@ -85,6 +95,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/confidentialite'
+    | '/don'
     | '/equipe'
     | '/evenements'
     | '/mentions-legales'
@@ -93,6 +104,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/confidentialite'
+    | '/don'
     | '/equipe'
     | '/evenements'
     | '/mentions-legales'
@@ -102,6 +114,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ConfidentialiteRoute: typeof ConfidentialiteRoute
+  DonRoute: typeof DonRoute
   EquipeRoute: typeof EquipeRoute
   EvenementsRoute: typeof EvenementsRoute
   MentionsLegalesRoute: typeof MentionsLegalesRoute
@@ -122,6 +135,13 @@ declare module '@tanstack/react-router' {
       path: '/confidentialite'
       fullPath: '/confidentialite'
       preLoaderRoute: typeof ConfidentialiteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/don': {
+      id: '/don'
+      path: '/don'
+      fullPath: '/don'
+      preLoaderRoute: typeof DonRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/equipe': {
@@ -158,6 +178,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ConfidentialiteRoute: ConfidentialiteRoute,
+  DonRoute: DonRoute,
   EquipeRoute: EquipeRoute,
   EvenementsRoute: EvenementsRoute,
   MentionsLegalesRoute: MentionsLegalesRoute,

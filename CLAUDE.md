@@ -36,7 +36,10 @@ L'objectif principal est de **dépoussiérer l'image du bridge**, de séduire un
 
 - **Tone:** Accueillant, dynamique, direct, avec une pointe d'humour. Désamorce le côté "austère" traditionnellement associé au bridge.
 - **Visual Style:** Inspiré de la plaquette du club, trouvable ici : src\assets\Ebauche Plaquette QFJB.pdf
-- **Colors:** Bleu nuit (`#0B397D`), Rouge/Corail (`#E5002B`), Fond Slate/Blanc (`#F8FAFC`).
+- **Colors:** Palette officielle définie par l'équipe communication (voir
+  `src/assets/palette_unifiee_qfjb.png`) : Bleu nuit (`#082A63`), Bleu
+  principal (`#0B357F`), Rouge (`#EA0023`), Orange (`#F67527`), Fond crème
+  (`#FDF9F1`).
 
 ## Key Key Information
 

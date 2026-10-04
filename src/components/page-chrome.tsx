@@ -9,6 +9,7 @@ const NAV = [
   { label: "Qui sommes-nous ?", to: "/equipe" },
   { label: "Événements", to: "/evenements" },
   { label: "Vie du club", to: "/vie-du-club" },
+  { label: "Faire un don", to: "/don" },
 ] as const;
 
 export function SkipLink() {

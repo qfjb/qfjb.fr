@@ -27,6 +27,13 @@
       gratuite**, seule la licence FFB est payante (gratuite jusqu'à 26 ans,
       1re année offerte pour les adultes, sinon 65 €). Bon argument de
       recrutement — à mettre sur une future page « Rejoindre » ou une FAQ.
+- [ ] Utiliser de vraies photos de la Coupe Epsilon et du tournoi de rentrée
+      une fois récupérées (à ajouter dans `src/assets/`).
+- [ ] Retirer la mise en avant de la Coupe Epsilon sur l'accueil (section
+      « Événement phare ») — ne garder/enrichir ce contenu que sur la page
+      `/evenements`.
+- [ ] Ajouter une section présentant les thèmes des prochains cours sous
+      forme de cartes (emplacement à définir).
 
 ## Maintenance / dette technique
 

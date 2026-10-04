@@ -292,8 +292,8 @@ function VieDuClubPage() {
                 {
                   src: festivalSaintes,
                   alt: "Membres du QFJB au festival de bridge de Saintes",
-                  width: 1200,
-                  height: 1600,
+                  width: 763,
+                  height: 1081,
                   objectTop: true,
                 },
               ].map((g) => (
