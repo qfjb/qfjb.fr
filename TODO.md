@@ -31,7 +31,7 @@
       une fois récupérées (à ajouter dans `src/assets/`).
 - [ ] Retirer la mise en avant de la Coupe Epsilon sur l'accueil (section
       « Événement phare ») — ne garder/enrichir ce contenu que sur la page
-      `/evenements`.
+      `/actualites`.
 - [ ] Ajouter une section présentant les thèmes des prochains cours sous
       forme de cartes (emplacement à définir).
 

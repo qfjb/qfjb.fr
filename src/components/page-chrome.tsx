@@ -7,7 +7,7 @@ import logo from "@/assets/logo.png";
 const NAV = [
   { label: "Accueil", to: "/" },
   { label: "Qui sommes-nous ?", to: "/equipe" },
-  { label: "Événements", to: "/evenements" },
+  { label: "Actualités", to: "/actualites" },
   { label: "Vie du club", to: "/vie-du-club" },
   { label: "Faire un don", to: "/don" },
 ] as const;

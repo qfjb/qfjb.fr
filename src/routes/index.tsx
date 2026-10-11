@@ -7,13 +7,11 @@ import {
   ArrowRight,
   Users,
   Sparkles,
-  Trophy,
   GraduationCap,
   Mic,
   Pizza,
   Smile,
   Layers,
-  CalendarDays,
   Clock,
   MapPin,
   Mail,
@@ -231,40 +229,6 @@ function Index() {
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* Événement phare */}
-        <section className="border-b-4 border-ink py-16 sm:py-20">
-          <div className="mx-auto max-w-6xl px-4">
-            <span className="pop-badge bg-coral text-coral-foreground">
-              <Trophy className="size-3.5" /> Événement phare
-            </span>
-            <h2 className="mt-5 text-4xl text-electric sm:text-5xl">La Coupe Epsilon</h2>
-            <div className="mt-3 h-1.5 w-24 bg-coral" />
-            <p className="mt-4 max-w-2xl text-lg font-semibold text-muted-foreground">
-              Le QFJB organise avec le Comité de Paris la Coupe Epsilon ! Venez nombreux le dimanche
-              13 septembre 2026 à 14h pour un tournoi convivial où les générations sont mélangées :
-              un joueur de moins de 31 ans joue avec un joueur de plus de 31 ans.
-            </p>
-            <div className="mt-10 grid max-w-2xl gap-3 sm:grid-cols-3">
-              {[
-                { icon: CalendarDays, value: "13 septembre" },
-                { icon: Clock, value: "14h" },
-                { icon: MapPin, value: "Paris" },
-              ].map((item) => (
-                <div key={item.value} className="pop-card p-4 text-center">
-                  <item.icon className="mx-auto size-6 text-coral" />
-                  <p className="mt-2 font-accent text-xl text-electric">{item.value}</p>
-                </div>
-              ))}
-            </div>
-            <Link
-              to="/evenements"
-              className="pop-btn mt-8 bg-coral px-6 py-3 text-coral-foreground"
-            >
-              Découvrir l'événement <ArrowRight className="size-4" />
-            </Link>
           </div>
         </section>
 

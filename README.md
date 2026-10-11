@@ -38,7 +38,7 @@ npm run dev
 ## Structure
 
 - `src/routes/` — une route par fichier : `index.tsx` (accueil), `equipe.tsx`,
-  `evenements.tsx`, `vie-du-club.tsx`, `confidentialite.tsx`. `__root.tsx` = shell
+  `actualites.tsx`, `vie-du-club.tsx`, `confidentialite.tsx`. `__root.tsx` = shell
   commun (meta, og:image, pages 404 / erreur). `routeTree.gen.ts` est généré.
 - `src/components/page-chrome.tsx` — chrome partagé : `SkipLink`, `PageHeader`
   (nav + menu mobile), `PageFooter`. Utilisé sur toutes les pages.
