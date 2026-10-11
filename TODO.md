@@ -37,12 +37,6 @@
       liens réseaux sociaux de `index.tsx`. Elles fonctionnent encore mais
       disparaîtront à une future montée de version.
 - [ ] Import mort : `Mic` n'est plus utilisé dans `index.tsx`.
-- [ ] Nettoyer les dossiers de photos brutes non triées (`src/assets/Coupe-epsilon/`,
-      `src/assets/rentree/`, `src/assets/Photos-generiques/`) : seule une sélection a
-      été reprise en JPG optimisé à la racine de `src/assets/` pour la page
-      `/actualites`. Ces dossiers contiennent des originaux lourds (plusieurs Mo
-      chacun), des doublons entre dossiers, et des fichiers `.HEIC` illisibles par
-      les navigateurs — à supprimer du repo une fois le tri définitivement terminé.
 
 ## À surveiller
 
