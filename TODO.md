@@ -27,8 +27,6 @@
       gratuite**, seule la licence FFB est payante (gratuite jusqu'à 26 ans,
       1re année offerte pour les adultes, sinon 65 €). Bon argument de
       recrutement — à mettre sur une future page « Rejoindre » ou une FAQ.
-- [ ] Ajouter une section présentant les thèmes des prochains cours sous
-      forme de cartes (emplacement à définir).
 
 ## Maintenance / dette technique
 
@@ -42,3 +40,7 @@
 
 - Titres forcés en capitales via CSS : garder un œil sur la lisibilité des
   titres longs au fil des nouveaux contenus.
+- `COURS_THEMES` dans `index.tsx` (section « Au programme cette semaine ») :
+  à mettre à jour chaque semaine avec les thèmes intermédiaire/confirmés
+  (cf. message WhatsApp du président) — sinon la page affiche un thème
+  périmé.

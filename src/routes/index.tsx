@@ -12,6 +12,8 @@ import {
   Pizza,
   Smile,
   Layers,
+  TrendingUp,
+  Trophy,
   Clock,
   MapPin,
   Mail,
@@ -57,6 +59,22 @@ export const Route = createFileRoute("/")({
   }),
   component: Index,
 });
+
+// À mettre à jour chaque semaine (le président les partage sur le WhatsApp du
+// club). Les cours débutants suivent un programme pas-à-pas, pas de thème
+// hebdomadaire à préciser pour eux.
+const COURS_THEMES = [
+  {
+    icon: TrendingUp,
+    niveau: "Cours intermédiaire",
+    theme: "Le fit majeur après ouverture d'1 majeur",
+  },
+  {
+    icon: Trophy,
+    niveau: "Cours confirmés",
+    theme: "La signalisation en défense",
+  },
+];
 
 function SectionTitle({ children, light }: { children: string; light?: boolean }) {
   return (
@@ -231,6 +249,27 @@ function Index() {
                   </Link>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Thèmes des prochains cours */}
+        <section className="border-b-4 border-ink py-16 sm:py-20">
+          <div className="mx-auto max-w-6xl px-4">
+            <SectionTitle>Au programme cette semaine</SectionTitle>
+            <p className="mt-4 max-w-2xl text-lg font-semibold text-muted-foreground">
+              Les cours intermédiaire et confirmés changent de thème chaque semaine. Les débutants,
+              eux, progressent pas à pas depuis les bases.
+            </p>
+            <div className="mt-10 grid gap-6 sm:grid-cols-2">
+              {COURS_THEMES.map((c) => (
+                <article key={c.niveau} className="pop-card p-7">
+                  <span className="pop-badge bg-electric text-electric-foreground">
+                    <c.icon className="size-3.5" /> {c.niveau}
+                  </span>
+                  <h3 className="mt-4 text-2xl text-electric">{c.theme}</h3>
+                </article>
+              ))}
             </div>
           </div>
         </section>
