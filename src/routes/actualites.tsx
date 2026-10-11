@@ -9,10 +9,25 @@ import {
   ExternalLink,
   Quote,
   Newspaper,
+  Pizza,
+  GraduationCap,
 } from "lucide-react";
 
 import { SkipLink, PageHeader, PageFooter } from "@/components/page-chrome";
 import { PhotoCarousel } from "@/components/photo-carousel";
+import rentreeAccueil from "@/assets/rentree-accueil.jpg";
+import rentreeCoursDebutants from "@/assets/rentree-cours-debutants.jpg";
+import rentreeSalle from "@/assets/rentree-salle.jpg";
+import rentreePizzaDuo from "@/assets/rentree-pizza-duo.jpg";
+import rentreePizzaFlatlay from "@/assets/rentree-pizza-flatlay.jpg";
+import rentreeRiresDuo from "@/assets/rentree-rires-duo.jpg";
+import rentreeRires from "@/assets/rentree-rires.jpg";
+import rentreePartie from "@/assets/rentree-partie.jpg";
+import rentreeAnnonce from "@/assets/rentree-annonce.jpg";
+import rentreeCalin from "@/assets/rentree-calin.jpg";
+import rentreeAmbiance from "@/assets/rentree-ambiance.jpg";
+import rentreeConcentration from "@/assets/rentree-concentration.jpg";
+import rentreeSourire from "@/assets/rentree-sourire.jpg";
 import afficheEpsilon from "@/assets/coupe-epsilon.jpg";
 import epsilonSalle from "@/assets/epsilon-salle.jpg";
 import epsilonPartie1 from "@/assets/epsilon-partie1.jpg";
@@ -28,6 +43,87 @@ import epsilonRires from "@/assets/epsilon-rires.jpg";
 import epsilonFun from "@/assets/epsilon-fun.jpg";
 import epsilonGroupeSourires from "@/assets/epsilon-groupe-sourires.jpg";
 import epsilonCartesEnMain from "@/assets/epsilon-cartes-en-main.jpg";
+
+const RENTREE_PHOTOS = [
+  {
+    src: rentreePizzaFlatlay,
+    alt: "Pizzas et boîtiers de donnes de bridge sur la table du club",
+    width: 1600,
+    height: 2400,
+  },
+  {
+    src: rentreeAccueil,
+    alt: "Une joueuse tout sourire pendant la soirée de rentrée du QFJB",
+    width: 1600,
+    height: 2400,
+  },
+  {
+    src: rentreeCoursDebutants,
+    alt: "Une initiatrice explique les bases du bridge aux nouveaux arrivants",
+    width: 1600,
+    height: 2400,
+  },
+  {
+    src: rentreeSalle,
+    alt: "La salle du comité de Neuilly pleine pour la soirée de rentrée",
+    width: 1600,
+    height: 2133,
+  },
+  {
+    src: rentreePizzaDuo,
+    alt: "Deux membres du club dégustant une part de pizza",
+    width: 1600,
+    height: 2400,
+  },
+  {
+    src: rentreeRiresDuo,
+    alt: "Deux joueurs tout sourire pendant la soirée de rentrée",
+    width: 1600,
+    height: 2400,
+  },
+  {
+    src: rentreeRires,
+    alt: "Une joueuse éclate de rire en pleine partie",
+    width: 1600,
+    height: 2400,
+  },
+  {
+    src: rentreePartie,
+    alt: "Une partie de bridge vue de dessus pendant la soirée de rentrée",
+    width: 1600,
+    height: 1067,
+  },
+  {
+    src: rentreeAnnonce,
+    alt: "Deux membres du club juchées sur des tabourets pour une annonce",
+    width: 1600,
+    height: 2400,
+  },
+  {
+    src: rentreeCalin,
+    alt: "Deux membres du club se prennent dans les bras en souriant",
+    width: 1600,
+    height: 2400,
+  },
+  {
+    src: rentreeAmbiance,
+    alt: "Ambiance conviviale et pizzas entre deux donnes à la rentrée",
+    width: 1600,
+    height: 2400,
+  },
+  {
+    src: rentreeConcentration,
+    alt: "Une joueuse concentrée sur son jeu pendant la soirée de rentrée",
+    width: 1600,
+    height: 2400,
+  },
+  {
+    src: rentreeSourire,
+    alt: "Un joueur tout sourire pendant la soirée de rentrée",
+    width: 1600,
+    height: 2400,
+  },
+];
 
 const EPSILON_PHOTOS = [
   {
@@ -118,13 +214,13 @@ export const Route = createFileRoute("/actualites")({
       {
         name: "description",
         content:
-          "Les actualités du Quai Francilien des Jeunes Bridgeurs : retour sur la Coupe Epsilon et tous les événements marquants du club.",
+          "Les actualités du Quai Francilien des Jeunes Bridgeurs : tournoi de rentrée, Coupe Epsilon et tous les événements marquants du club.",
       },
       { property: "og:title", content: "Actualités — QFJB" },
       {
         property: "og:description",
         content:
-          "Retours sur la Coupe Epsilon et les grands moments du club de bridge des jeunes Franciliens.",
+          "Tournoi de rentrée, Coupe Epsilon et les grands moments du club de bridge des jeunes Franciliens.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -194,6 +290,47 @@ function ActualitesPage() {
             </p>
 
             <div className="mt-10 space-y-16">
+              {/* Article : Tournoi de rentrée */}
+              <article className="pop-card p-6 sm:p-8">
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="pop-badge bg-coral text-coral-foreground">
+                    <Pizza className="size-3.5" /> Tournoi de rentrée
+                  </span>
+                  <span className="font-accent text-sm font-bold uppercase tracking-widest text-muted-foreground">
+                    24 septembre 2026
+                  </span>
+                </div>
+                <h3 className="mt-5 text-3xl text-electric sm:text-4xl">
+                  C'est la rentrée au QFJB !
+                </h3>
+                <div className="mt-3 h-1.5 w-24 bg-coral" />
+
+                <div className="mt-6 space-y-4">
+                  <p className="font-semibold leading-relaxed text-muted-foreground">
+                    Louis nous a concocté un tournoi de rentrée pour tout le monde — enfin, presque
+                    : les petits nouveaux étaient plutôt du côté des cours, à découvrir les bases du
+                    bridge avec Margaux et Pierre.
+                  </p>
+                  <p className="font-semibold leading-relaxed text-muted-foreground">
+                    Au programme : des parties, quelques fous rires, et bien sûr des pizzas. De quoi
+                    lancer la saison dans la bonne humeur.
+                  </p>
+                </div>
+
+                <div className="mt-6 flex items-start gap-4 pop-card bg-muted p-5 sm:p-6">
+                  <GraduationCap className="size-6 shrink-0 text-coral" />
+                  <p className="font-semibold text-electric">
+                    Envie de nous rejoindre ? Rendez-vous tous les jeudis soir pour une soirée
+                    bridge &amp; pizzas au comité de Paris (arrêt Les Sablons) — gratuit et sans
+                    engagement.
+                  </p>
+                </div>
+
+                <div className="mt-8">
+                  <PhotoCarousel slides={RENTREE_PHOTOS} />
+                </div>
+              </article>
+
               {/* Article : Coupe Epsilon */}
               <article className="pop-card p-6 sm:p-8">
                 <div className="flex flex-wrap items-center gap-3">
