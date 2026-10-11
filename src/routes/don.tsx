@@ -68,6 +68,16 @@ function DonPage() {
             <p className="mt-6 max-w-2xl text-lg font-semibold italic opacity-90">
               Appel aux dons — pour que le club reste gratuit, accueillant et ouvert à tous.
             </p>
+            <div className="mt-8">
+              <a
+                href="https://www.monetico-online-asso.com/qfjb/dons"
+                target="_blank"
+                rel="noreferrer"
+                className="pop-btn bg-coral px-7 py-4 text-lg text-coral-foreground"
+              >
+                Faire un don en ligne <HandCoins className="size-5" />
+              </a>
+            </div>
           </div>
         </section>
 
@@ -191,16 +201,26 @@ function DonPage() {
             <div>
               <h2 className="text-3xl sm:text-4xl">Merci de faire grandir le club !</h2>
               <p className="mt-3 max-w-xl font-semibold opacity-90">
-                Une solution de paiement en ligne arrive bientôt sur cette page. En attendant,
-                contactez-nous pour organiser votre don.
+                Le paiement en ligne se fait en quelques clics, via la plateforme sécurisée de notre
+                banque. Une question ? Écrivez-nous, on répond vite.
               </p>
             </div>
-            <a
-              href="mailto:qfjb@parisbridge.fr"
-              className="pop-btn bg-coral px-6 py-3 text-coral-foreground"
-            >
-              Nous écrire <Mail className="size-4" />
-            </a>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="https://www.monetico-online-asso.com/qfjb/dons"
+                target="_blank"
+                rel="noreferrer"
+                className="pop-btn bg-coral px-6 py-3 text-coral-foreground"
+              >
+                Faire un don en ligne <HandCoins className="size-4" />
+              </a>
+              <a
+                href="mailto:qfjb@parisbridge.fr"
+                className="pop-btn bg-card px-6 py-3 text-foreground"
+              >
+                Nous écrire <Mail className="size-4" />
+              </a>
+            </div>
           </div>
         </section>
       </main>

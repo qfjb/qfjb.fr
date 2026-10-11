@@ -27,11 +27,6 @@
       gratuite**, seule la licence FFB est payante (gratuite jusqu'à 26 ans,
       1re année offerte pour les adultes, sinon 65 €). Bon argument de
       recrutement — à mettre sur une future page « Rejoindre » ou une FAQ.
-- [ ] Utiliser de vraies photos de la Coupe Epsilon et du tournoi de rentrée
-      une fois récupérées (à ajouter dans `src/assets/`).
-- [ ] Retirer la mise en avant de la Coupe Epsilon sur l'accueil (section
-      « Événement phare ») — ne garder/enrichir ce contenu que sur la page
-      `/actualites`.
 - [ ] Ajouter une section présentant les thèmes des prochains cours sous
       forme de cartes (emplacement à définir).
 
@@ -42,6 +37,12 @@
       liens réseaux sociaux de `index.tsx`. Elles fonctionnent encore mais
       disparaîtront à une future montée de version.
 - [ ] Import mort : `Mic` n'est plus utilisé dans `index.tsx`.
+- [ ] Nettoyer les dossiers de photos brutes non triées (`src/assets/Coupe-epsilon/`,
+      `src/assets/rentree/`, `src/assets/Photos-generiques/`) : seule une sélection a
+      été reprise en JPG optimisé à la racine de `src/assets/` pour la page
+      `/actualites`. Ces dossiers contiennent des originaux lourds (plusieurs Mo
+      chacun), des doublons entre dossiers, et des fichiers `.HEIC` illisibles par
+      les navigateurs — à supprimer du repo une fois le tri définitivement terminé.
 
 ## À surveiller
 
