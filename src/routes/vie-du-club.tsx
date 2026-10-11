@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Info, Trophy, Quote, Globe } from "lucide-react";
 
 import { SkipLink, PageHeader, PageFooter } from "@/components/page-chrome";
+import { SITE_URL } from "@/lib/site";
 import championsFrance2025 from "@/assets/open4performance2025.jpg";
 import festivalSaintes from "@/assets/qfjb-a-saintes.jpg";
 import joueuses from "@/assets/girl-power.jpg";
@@ -23,8 +24,10 @@ export const Route = createFileRoute("/vie-du-club")({
         content: "Palmarès, témoignages et ambiance du club de bridge des jeunes Franciliens.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE_URL}/vie-du-club` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/vie-du-club` }],
   }),
   component: VieDuClubPage,
 });

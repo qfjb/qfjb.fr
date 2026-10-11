@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Gift, Spade, Heart, Diamond, Quote, HandCoins, Percent, Mail } from "lucide-react";
 
 import { SkipLink, PageHeader, PageFooter } from "@/components/page-chrome";
+import { SITE_URL } from "@/lib/site";
 import groupeMembres from "@/assets/club-group.jpg";
 
 export const Route = createFileRoute("/don")({
@@ -20,8 +21,10 @@ export const Route = createFileRoute("/don")({
           "Vos dons financent les cours gratuits, les premières compétitions des jeunes bridgeurs et le développement du club.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE_URL}/don` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/don` }],
   }),
   component: DonPage,
 });

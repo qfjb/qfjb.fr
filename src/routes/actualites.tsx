@@ -15,6 +15,7 @@ import {
 
 import { SkipLink, PageHeader, PageFooter } from "@/components/page-chrome";
 import { PhotoCarousel } from "@/components/photo-carousel";
+import { SITE_URL } from "@/lib/site";
 import rentreeAccueil from "@/assets/rentree/accueil.jpg";
 import rentreeCoursDebutants from "@/assets/rentree/cours-debutants.jpg";
 import rentreeSalle from "@/assets/rentree/salle.jpg";
@@ -223,8 +224,10 @@ export const Route = createFileRoute("/actualites")({
           "Tournoi de rentrée, Coupe Epsilon et les grands moments du club de bridge des jeunes Franciliens.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE_URL}/actualites` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/actualites` }],
   }),
   component: ActualitesPage,
 });

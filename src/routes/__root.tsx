@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import ogImage from "@/assets/og-image.jpg";
 import { PageHeader } from "@/components/page-chrome";
 import { reportRuntimeError } from "../lib/runtime-error-reporting";
+import { SITE_URL } from "../lib/site";
 
 function SuitRow({ className }: { className: string }) {
   return (
@@ -25,10 +26,8 @@ function SuitRow({ className }: { className: string }) {
   );
 }
 
-// URL absolue du site (schéma + domaine). Les robots des réseaux sociaux
-// récupèrent l'image hors contexte : og:image doit être une URL complète,
-// pas un chemin relatif comme "/assets/...".
-const SITE_URL = "https://qfjb.fr";
+// Les robots des réseaux sociaux récupèrent l'image hors contexte : og:image
+// doit être une URL complète, pas un chemin relatif comme "/assets/...".
 const OG_IMAGE_URL = `${SITE_URL}${ogImage}`;
 
 function NotFoundComponent() {

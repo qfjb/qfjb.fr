@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { SkipLink, PageHeader, PageFooter } from "@/components/page-chrome";
+import { SITE_URL } from "@/lib/site";
 
 export const Route = createFileRoute("/confidentialite")({
   head: () => ({
@@ -13,7 +14,9 @@ export const Route = createFileRoute("/confidentialite")({
       },
       { property: "og:title", content: "Politique de confidentialité — QFJB" },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE_URL}/confidentialite` },
     ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/confidentialite` }],
   }),
   component: ConfidentialitePage,
 });

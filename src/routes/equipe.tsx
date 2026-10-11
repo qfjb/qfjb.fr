@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Mail, Spade, Heart, Diamond, Club, GraduationCap, Users } from "lucide-react";
 
 import { SkipLink, PageHeader, PageFooter } from "@/components/page-chrome";
+import { SITE_URL } from "@/lib/site";
 import soireeClub from "@/assets/bridge-table2.jpg";
 import profMargaux from "@/assets/prof-margaux.jpg";
 import profLouis from "@/assets/prof-louis.jpg";
@@ -23,8 +24,10 @@ export const Route = createFileRoute("/equipe")({
           "Le bureau et les professeurs du QFJB : les visages derrière le club de bridge des jeunes Franciliens.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE_URL}/equipe` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/equipe` }],
   }),
   component: EquipePage,
 });

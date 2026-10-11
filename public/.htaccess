@@ -14,6 +14,10 @@
   RewriteCond %{HTTPS} !=on
   RewriteCond %{HTTP:X-Forwarded-Proto} !=https
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Ancienne page "/evenements" renommée en "/actualites" : on garde les
+  # favoris et les liens déjà indexés valides.
+  RewriteRule ^evenements/?$ /actualites [L,R=301]
 </IfModule>
 
 ErrorDocument 404 /404.html

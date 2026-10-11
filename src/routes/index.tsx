@@ -23,6 +23,7 @@ import {
 
 import { ContactForm } from "@/components/contact-form";
 import { SkipLink, PageHeader } from "@/components/page-chrome";
+import { SITE_URL } from "@/lib/site";
 
 import coursTable from "@/assets/bridge-table4.jpg";
 import banniere from "@/assets/logo-banniere.jpg";
@@ -49,8 +50,10 @@ export const Route = createFileRoute("/")({
           "Tous les jeudis à 20h, cours gratuits pour découvrir le bridge. Débutants et confirmés, tous niveaux bienvenus.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: SITE_URL },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: SITE_URL }],
   }),
   component: Index,
 });

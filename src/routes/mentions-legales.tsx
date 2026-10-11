@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { SkipLink, PageHeader, PageFooter } from "@/components/page-chrome";
+import { SITE_URL } from "@/lib/site";
 
 export const Route = createFileRoute("/mentions-legales")({
   head: () => ({
@@ -13,7 +14,9 @@ export const Route = createFileRoute("/mentions-legales")({
       },
       { property: "og:title", content: "Mentions légales — QFJB" },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE_URL}/mentions-legales` },
     ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/mentions-legales` }],
   }),
   component: MentionsLegalesPage,
 });
